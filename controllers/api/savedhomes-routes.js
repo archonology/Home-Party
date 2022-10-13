@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const router = require('axios').Router();
 const { Home, User, Decor } = require('../../models');
 
-//GET all blog posts to view API (api/posts)
+//GET all saved homes (api/homes)
 router.get('/', async (req, res) => {
   try {
       const dbHomeData = await Home.findAll({
@@ -13,3 +13,5 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
   }
 });
+
+module.exports = router;
