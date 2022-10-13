@@ -1,0 +1,26 @@
+[
+    {
+        "user_id": 1,
+        "home_id": 1,
+        "decor_id": 4
+
+    },
+    {
+        "user_id": 2,
+        "home_id": 2,
+        "decor_id": 3
+
+    },
+    {
+        "user_id": 3,
+        "home_id": 3,
+        "decor_id": 2
+
+    },
+    {
+        "user_id": 4,
+        "home_id": 3,
+        "decor_id": 1
+
+    }
+]

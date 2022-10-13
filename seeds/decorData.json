@@ -1,0 +1,34 @@
+[
+    {
+      "product_name": "Lotus Sculpture",
+      "description": "would be great in the yard!",
+      "price": 6999.99,
+      "link": "sculpture.com",
+      "user_id": 1,
+      "home_id": 1
+    },
+    {
+        "product_name": "Bamboo Wallpaper",
+        "description": "maybe for the kitchen wall",
+        "price": 543.99,
+        "link": "wallpaper.com",
+        "user_id": 3,
+        "home_id": 2
+    },
+    {
+        "product_name": "Sofa",
+        "description": "I love this in the living room!",
+        "price": 3988.99,
+        "link": "sofa.com",
+        "user_id": 2,
+        "home_id": 3
+      },
+      {
+          "product_name": "dishwasher",
+          "description": "this looks cool",
+          "price": 799.99,
+          "link": "dishwasher.com",
+          "user_id": 1,
+          "home_id": 3
+      }
+  ]
