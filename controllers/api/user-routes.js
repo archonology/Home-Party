@@ -1,6 +1,6 @@
 const router = require('axios').Router();
 //needs model connections in the curly fries
-const {} = require('../models');
+const {} = require('../../models');
 
 //GET Routes
 
