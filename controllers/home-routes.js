@@ -19,21 +19,8 @@ router.get('/', async (req, res) => {
         const dbHomeData = await Home.findAll({
            
             include: [
-                {
-                  model: User,
-                  attributes: [
-                    'id',
-                    'username',
-                  ],
-                },
-                {
-                    model: Decor,
-                    attributes: [
-                      'product_name',
-                      'link',
-                      //more attributes we want?
-                    ],
-                  },
+                { model: User },
+                { model: Decor },
               ],
         });
 
