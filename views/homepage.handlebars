@@ -1,0 +1,14 @@
+{{#each home }}
+<div class="each-post">
+    <a href="/posts/{{id}}">
+        <h2>{{blog.title}}</h2>
+    </a>
+        <p><em>{{home.address}}</em></p>
+    <p>Price: {{home.price}}</p>
+    <p>{{home.bedrooms}} Bedrooms</p>
+    <p>{{home.bathrooms}} Bathrooms</p>
+    <p>{{home.square_feet}} sq.Ft.</p>
+    <p> Check it out at: {{home.link}}</p>
+    <p><em>Home added on {{home.date_saved}}</em></p>
+</div>
+{{/each}}
