@@ -2,24 +2,57 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/jass.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <title>Sweet Dreams</title>
-  <link rel="stylesheet" href="/css/jass.css">
 </head>
-
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      Saved Homes
-    </h1>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand m-4" href="/">Sweet Dreams</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Homepage<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
+        </ul>
+        <!-- login button needs route to handlebars html -->
+        <span class="navbar navbar-dark bg-dark m-4">
+          {{#if loggedIn}}
+          <button id="logout" class="btn btn-outline-success logout">Logout</button>
+          {{else}}
+          <a href="/login" class="form-inline">
+            <button class="btn btn-outline-success login" type="button">
+              Login
+            </button></a>
+            {{/if}}
+        </span>
+      </div>
+    </nav>
   </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
+  <main>
+    {{{body}}}
   </main>
-  <footer>
-      
-  </footer>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{!-- <script src="/js/comment.js"></script> --}}
+  {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
