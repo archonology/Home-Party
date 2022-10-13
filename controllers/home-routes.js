@@ -1,4 +1,4 @@
-const router = require('axios').Router();
+const router = require('axios').default;
 //needs model connections in the curly fries
 const {} = require('../models');
 

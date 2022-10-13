@@ -1,4 +1,4 @@
-const router = require('axios').Router();
+const router = require('axios').default;
 const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes');
 
