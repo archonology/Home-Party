@@ -1,0 +1,97 @@
+:root {
+  --primary: #2b3650;
+  --secondary: #762a24;
+  --tertiary: #a53c1f;
+  --quatrinary: #3a7149;
+  --light: #e3e4e3;
+  --dark: #182c23;
+}
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--light);
+}
+
+main {
+  margin: 3em;
+  padding: 3em;
+}
+
+.login {
+  background-color: #53a268;
+}
+
+.logout {
+  background-color: #c64a41;
+}
+
+h2 {
+  text-decoration: underline;
+  color: var(--dark);
+}
+p {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.each-post {
+  border-bottom: var(--dark) solid 2px;
+  margin-bottom: 1em;
+}
+
+.dropdown {
+  margin-top: 1em;
+}
+
+.comment {
+  border-bottom: var(--dark) solid 2px;
+}
+
+.comment p {
+  color: var(--secondary);
+  margin-top: 1em;
+}
+
+.new-post button {
+  margin-top: 1em;
+  color: white;
+  background-color: var(--quatrinary);
+}
+
+
+.update {
+  background-color: #deac08;
+}
+
+.delete {
+  background-color: #c64a41;
+}
+
+.login:hover {
+  background-color: #2e613c;
+}
+
+.logout:hover {
+  background-color: #762a24;
+}
+
+h2:hover {
+  color: var(--tertiary);
+}
+
+.new-post button:hover {
+  background-color: #53a268;
+}
+
+.update:hover {
+  background-color: #d2a308;
+}
+
+.delete:hover {
+  background-color: #762a24;
+}
