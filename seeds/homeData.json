@@ -1,0 +1,32 @@
+[
+    {
+      "title": "Way to Awesome",
+      "address": "41 Blue Jay Way, Birdsville, Ontario",
+      "price": 2000000,
+      "bedrooms": 7,
+      "bathrooms": 3,
+      "square_feet": 2000,
+      "link": "pillow.com/bluejayway",
+      "user_id": 1
+    },
+    {
+        "title": "If only we could afford it",
+        "address": "4412 Thomas Ave S, Minneapolis, MN 55410",
+        "price": 1999900,
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "square_feet": 5000,
+        "link": "https://www.zillow.com/homedetails/4412-Thomas-Ave-S-Minneapolis-MN-55410/1761558_zpid/",
+        "user_id": 2
+      },
+      {
+        "title": "This might be the one!",
+        "address": "14 The Prado NE, Atlanta, GA 30309",
+        "price": 3295000,
+        "bedrooms": 5,
+        "bathrooms": 6,
+        "square_feet": 3753,
+        "link": "https://www.zillow.com/homedetails/14-The-Prado-NE-Atlanta-GA-30309/35931557_zpid/",
+        "user_id": 3
+      }
+  ]
