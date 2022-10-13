@@ -1,8 +1,9 @@
 :root {
-  --primary: #2b3650;
-  --secondary: #762a24;
-  --tertiary: #a53c1f;
-  --quatrinary: #3a7149;
+  --latenight: #2b3650;
+  --darkfire: #762a24;
+  --fire: #a53c1f;
+  --garden: #3a7149;
+  --midnight: #102659;
   --light: #e3e4e3;
   --dark: #182c23;
 }
@@ -15,6 +16,14 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--light);
+}
+
+.navbar {
+  background-color: var(--latenight);
+}
+
+.navbar h1 {
+
 }
 
 main {
@@ -53,14 +62,14 @@ p {
 }
 
 .comment p {
-  color: var(--secondary);
+  color: var(--darkfire);
   margin-top: 1em;
 }
 
 .new-post button {
   margin-top: 1em;
   color: white;
-  background-color: var(--quatrinary);
+  background-color: var(--garden);
 }
 
 
@@ -81,7 +90,7 @@ p {
 }
 
 h2:hover {
-  color: var(--tertiary);
+  color: var(--fire);
 }
 
 .new-post button:hover {
