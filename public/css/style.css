@@ -15,7 +15,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--light);
+ background-color: var(--midnight);
+ color: var(--light);
 }
 
 .navbar {
@@ -24,6 +25,14 @@ body {
 
 .navbar h1 {
 
+}
+
+.login-page {
+  color: var(--light);
+}
+
+.login-page p {
+  color: var(--light);
 }
 
 main {
