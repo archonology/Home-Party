@@ -41,6 +41,8 @@ router.post('/', async (req, res) => {
     }
 });
 
+
+
 // async function getHomes() {
 //     try {
 //         const dbHomeData = await Home.findAll({
