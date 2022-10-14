@@ -3,9 +3,12 @@
   --coal: #302c2c;
   --darkfire: #762a24;
   --fire: #a53c1f;
+  --lightfire: #637441;
   --garden: #3a7149;
   --midnight: #102659;
-  --light: #e3e4e3;
+  --beach: #c39668;
+  --lowsun: rgb(197, 144, 19);
+  --light: #f2e6d3;
   --dark: #182c23;
 }
 
@@ -47,8 +50,7 @@ main {
 }
 
 h2 {
-  text-decoration: underline;
-  color: var(--dark);
+text-align: center;
 }
 p {
   text-decoration: none;
@@ -84,24 +86,30 @@ p {
   margin-bottom: 2em;
 }
 
-.card {
-background-color: #b3836f;
+.home-card {
+background-color:var(--lightfire);
 }
 
+.decor-card {
+  background-color:var(--fire);
+  }
+
 .card-title {
-  color: var(--coal);
+  color: var(--light);
+  font-size: x-large;
 }
 .card-subtitle {
-  color: wheat;
+  line-height: 2;
 }
 
 .card-text {
-  color: var(--darkfire);
+  color: var(--coal);
+  font-weight: bold;
 }
 
 .card-link {
-  color: rgb(57, 90, 90);
-  background-color: darkgoldenrod;
+  color: var(--coal);
+  background-color: var(--lowsun);
   margin: 5px;
   font-weight: bold;
 }
@@ -132,10 +140,6 @@ background-color: #b3836f;
 
 .logout:hover {
   background-color: #762a24;
-}
-
-h2:hover {
-  color: var(--fire);
 }
 
 .card-link:hover {

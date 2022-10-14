@@ -1,24 +1,46 @@
 <div class="jumbotron">
   <h1 class="display-4">Your Dream Home Awaits</h1>
-  <p class="lead">Looking for that perfect home? Sweet Dreams is a site you can call your own for all your home searches and decorating dreams.</p>
+  <p class="lead">Looking for that perfect home? Sweet Dreams is a site you can call your own for all your home searches
+    and decorating dreams.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
 </div>
 <br>
 <br>
+<h2>All Saved Homes:</h2>
+<br>
 <section class="d-flex justify content center">
   {{#each homes as |home|}}
-  
-<div class="card p-2 ml-3" style="width: 40rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{home.address}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted"><em>Added on {{home.date_saved}}</em></h6>
-    <p class="card-text">{{home.title}} -- {{home.user.name}}</p>
-    <a href="/dashboard/homedecor"><button id="decor-link" class="btn card-link">Decor for this home</button></a>
-    <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">See this home</button></a>
+  <div class="home-card p-1 ml-3 mb-5" style="width: 40rem;">
+    <div class="card-body p-3">
+      <h5 class="card-title">{{home.address}}</h5>
+      <h6 class="card-subtitle mb-2 text-dark">Added on {{home.date_saved}}</h6>
+      <p class="card-text">{{home.title}} -- {{home.user.name}}</p>
+      <a href="/dashboard/homedecor"><button id="decor-link" class="btn card-link">Decor for this home</button></a>
+      <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">See this home</button></a>
+    </div>
   </div>
-</div>
-{{/each}}
+  {{/each}}
+  <br>
+  <br>
 </section>
-
-
+<h2>All Saved Decor:</h2>
+<section class="d-flex justify content center">
+  {{#each decors as |decor|}}
+  <br />
+  <div class="decor-card p-1 ml-3 mt-3" style="width: 40rem;">
+    <div class="card-body p-3">
+      <h5 class="card-title">{{decor.product_name}}</h5>
+      <h6 class="card-subtitle mb-2 text-dark">Added on
+        {{decor.date_saved}} || ${{decor.price}}</h6>
+      <p class="card-text">{{decor.description}} -- {{decor.user.name}}</p>
+      <div class="flex-d justify-content-center">
+        <a href="/dashboard/decorhomes"><button id="decor-link" class="btn card-link">Homes for this
+            decor</button></a>
+        <a href="/dashboard/updatedecore"><button id="update-link" class="btn card-link">Update this home</button></a>
+        <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">See this decor</button></a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</section>
