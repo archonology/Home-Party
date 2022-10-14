@@ -1,12 +1,61 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="homes-tab" data-toggle="tab" href="#homes" role="tab" aria-controls="homes" aria-selected="true">Homes</a>
+    <a class="nav-link active" id="homes-tab" data-toggle="tab" href="#homes" role="tab" aria-controls="homes"
+      aria-selected="true">Homes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="decor-tab" data-toggle="tab" href="#decor" role="tab" aria-controls="decor" aria-selected="false">Decor</a>
+    <a class="nav-link" id="decor-tab" data-toggle="tab" href="#decor" role="tab" aria-controls="decor"
+      aria-selected="false">Decor</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="homes" role="tabpanel" aria-labelledby="home-tab">other stuff</div>
-  <div class="tab-pane fade" id="decor" role="tabpanel" aria-labelledby="profile-tab">things</div>
+  <div class="tab-pane fade show active" id="homes" role="tabpanel" aria-labelledby="home-tab">
+    {{!-- <div class="each-home">
+
+      {{#each homes as |home|}}
+      <a href="{{home.link}}"></a>
+      <h2>{{home.address}}</h2>
+      <p><em> Added on {{home.date_saved}}</em></p>
+      {{/each}}
+    </div> --}}
+    {{#each homes as |home|}}
+    <br />
+    <section>
+    <div class="home-card" style="width: 40rem;">
+      <div class="card-body p-3">
+        <h5 class="card-title">{{home.address}}</h5>
+        <h6 class="card-subtitle mb-2 text-dark">Added on
+            {{home.date_saved}}</h6>
+        <p class="card-text">{{home.title}} -- {{home.user.name}}</p>
+        <div class="flex-d justify-content-center">
+          <a href="/dashboard/homedecor"><button id="decor-link" class="btn card-link">Decor for this home</button></a>
+          <a href="/dashboard/updatehome"><button id="update-link" class="btn card-link">Update this home</button></a>
+          <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">See this home</button></a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+</section>
+  </div>
+  <div class="tab-pane fade" id="decor" role="tabpanel" aria-labelledby="decor-tab">
+
+    {{#each decors as |decor|}}
+    <br />
+    <div class="decor-card" style="width: 40rem;">
+      <div class="card-body p-3">
+        <h5 class="card-title">{{decor.product_name}}</h5>
+        <h6 class="card-subtitle mb-2 text-dark">Added on
+            {{decor.date_saved}} || ${{decor.price}}</h6>
+        <p class="card-text">{{decor.description}} -- {{decor.user.name}}</p>
+        <div class="flex-d justify-content-center">
+          <a href="/dashboard/decorhomes"><button id="decor-link" class="btn card-link">Homes for this decor</button></a>
+          <a href="/dashboard/updatedecore"><button id="update-link" class="btn card-link">Update this home</button></a>
+          <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">See this decor</button></a>
+        </div>
+      </div>
+    </div>
+
+    {{/each}}
+
+  </div>
 </div>
