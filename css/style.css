@@ -48,14 +48,6 @@ p {
   margin-top: 1em;
 }
 
-.comment {
-  border-bottom: var(--dark) solid 2px;
-}
-
-.comment p {
-  color: var(--darkfire);
-  margin-top: 1em;
-}
 
 .new-post button {
   margin-top: 1em;
