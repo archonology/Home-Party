@@ -2,8 +2,8 @@
   --latenight: #2b3650;
   --coal: #302c2c;
   --darkfire: #762a24;
-  --fire: #a53c1f;
-  --lightfire: #637441;
+  --fire: #a84124;
+  --gardendusk: #536135;
   --garden: #3a7149;
   --midnight: #102659;
   --beach: #c39668;
@@ -57,6 +57,10 @@ p {
   color: var(--dark);
 }
 
+.user-box {
+width: 12em;
+}
+
 .each-post {
   border-bottom: var(--dark) solid 2px;
   margin-bottom: 1em;
@@ -68,14 +72,20 @@ p {
 
 #homes-tab {
   background-color: var(--latenight);
-  color: var(--light);
+  color: var(--beach);
   border: none;
+  font-weight: bold;
+  width: 20em;
+  padding: 1em;
 }
 
 #decor-tab {
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: #36274c;
+  color: var(--beach);
   border: none;
+  font-weight: bold;
+  width: 20em;
+  padding: 1em;
 }
 
 .nav-tabs {
@@ -87,7 +97,7 @@ p {
 }
 
 .home-card {
-background-color:var(--lightfire);
+background-color:var(--gardendusk);
 }
 
 .decor-card {
@@ -114,15 +124,14 @@ background-color:var(--lightfire);
   font-weight: bold;
 }
 
-/* .comment p {
-  color: var(--darkfire);
-  margin-top: 1em;
-} */
+#addhome-link {
+  background-color: #364567;
+  color: var(--beach);
+}
 
-.new-post button {
-  margin-top: 1em;
-  color: white;
-  background-color: var(--garden);
+#moredecor-link {
+  background-color: #4a3667;
+  color: var(--beach);
 }
 
 
@@ -145,6 +154,26 @@ background-color:var(--lightfire);
 .card-link:hover {
   background-color: rgb(199, 147, 14);
 }
+
+#homes-tab:hover {
+  text-decoration: none;
+  background-color: #364567;
+}
+
+#decor-tab:hover {
+  text-decoration: none;
+  background-color: #4a3667;
+}
+
+#addhome-link:hover {
+  background-color: #2b3650;
+}
+
+#moredecor-link:hover {
+  background-color: #36274c;
+}
+
+
 
 .new-post button:hover {
   background-color: #53a268;

@@ -6,7 +6,7 @@ const { Home, Decor, User } = require('../models');
 //GET the login/signup page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     }
 
@@ -67,25 +67,18 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
-//GET the decor to the dashboard 
-// router.get('/dashboard', async (req, res) => {
-//     try {
-//         const dbDecorData = await Decor.findAll({
+//GET all saved users for subscribing
+router.get('/subscribe', async (req, res) => {
+    try {
+        const dbUserData = await User.findAll({
+            attributes: { exclude: ['password'] }
+        });
 
-//             include: [
-//                 { model: User },
-//                 { model: Home },
-//             ],
-//         });
-
-//         const decors = dbDecorData.map((decor) => decor.get({ plain: true }));
-
-//         res.render('dashboard', { decors, loggedIn: req.session.loggedIn, });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-//Post Routes
+        const users = dbUserData.map((user) => user.get({ plain: true }));
+        res.render('subscribe', { users, loggedIn: req.session.loggedIn, });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
