@@ -1,5 +1,6 @@
 :root {
   --latenight: #2b3650;
+  --coal: #302c2c;
   --darkfire: #762a24;
   --fire: #a53c1f;
   --garden: #3a7149;
@@ -15,25 +16,27 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--light);
+  background-color: var(--midnight);
+  color: var(--light);
+}
+body p {
+  color: var(--light);
 }
 
 .navbar {
   background-color: var(--latenight);
 }
 
-.navbar h1 {
+/* .navbar h1 {
 
-}
+} */
 
 main {
   margin: 3em;
   padding: 3em;
 }
 
-/* .jumbotron {
-  background-image: url(https://www.cuttenrealty.com/wp-content/uploads/2015/11/Fall_Selling_Season.jpg);
-} */
+
 
 .login {
   background-color: #53a268;
@@ -61,14 +64,52 @@ p {
   margin-top: 1em;
 }
 
-.comment {
-  border-bottom: var(--dark) solid 2px;
+#homes-tab {
+  background-color: var(--latenight);
+  color: var(--light);
+  border: none;
 }
 
-.comment p {
+#decor-tab {
+  background-color: var(--dark);
+  color: var(--light);
+  border: none;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+#homes {
+  margin-bottom: 2em;
+}
+
+.card {
+background-color: #b3836f;
+}
+
+.card-title {
+  color: var(--coal);
+}
+.card-subtitle {
+  color: wheat;
+}
+
+.card-text {
+  color: var(--darkfire);
+}
+
+.card-link {
+  color: rgb(57, 90, 90);
+  background-color: darkgoldenrod;
+  margin: 5px;
+  font-weight: bold;
+}
+
+/* .comment p {
   color: var(--darkfire);
   margin-top: 1em;
-}
+} */
 
 .new-post button {
   margin-top: 1em;
@@ -95,6 +136,10 @@ p {
 
 h2:hover {
   color: var(--fire);
+}
+
+.card-link:hover {
+  background-color: rgb(199, 147, 14);
 }
 
 .new-post button:hover {
