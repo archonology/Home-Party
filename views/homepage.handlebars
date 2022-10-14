@@ -4,9 +4,16 @@
   <p class="lead">Looking for that perfect home? Sweet Dreams is a site you can call your own for all your home searches and decorating dreams.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="/about" role="button">Learn more</a>
-  </p>
 </div>
+<br>
+ <div class="each-home">
+        <h2>All saved Homes:</h2>
+        <br>
+        {{#each homes as |home|}}
+        <a href="{{home.link}}"></a>
+        <h3>{{home.address}}</h3>
+        <p><em> Added on {{home.date_saved}}</em></p>
+        {{/each}}
+    </div>
 
 

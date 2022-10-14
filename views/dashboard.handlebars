@@ -7,6 +7,19 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="homes" role="tabpanel" aria-labelledby="home-tab">other stuff</div>
+  <div class="tab-pane fade show active" id="homes" role="tabpanel" aria-labelledby="home-tab">
+    <div class="each-home">
+        
+        {{#each homes as |home|}}
+        <a href="{{home.link}}"></a>
+        <h2>{{home.address}}</h2>
+        <p><em> Added on {{home.date_saved}}</em></p>
+        {{/each}}
+    </div>
+    
+
+
+
+  </div>
   <div class="tab-pane fade" id="decor" role="tabpanel" aria-labelledby="profile-tab">things</div>
 </div>
