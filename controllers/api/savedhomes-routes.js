@@ -3,15 +3,42 @@ const { Home, User, Decor } = require('../../models');
 
 // GET all saved homes (api/homes)
 router.get('/', async (req, res) => {
-  try {
-      const dbHomeData = await Home.findAll({
-          include: [{ model: User }, { model: Decor }],
-      });
+    try {
+        const dbHomeData = await Home.findAll({
+            include: [{ model: User }, { model: Decor }],
+        });
 
-      res.status(200).json(dbHomeData);
-  } catch (err) {
-      res.status(500).json(err);
-  }
+        res.status(200).json(dbHomeData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.post('/', async (req, res) => {
+    try {
+        const dbHomeData = await Home.create(req.body, {
+            include: [{ model: User }, { model: Decor }],
+            title: req.body.title,
+            address: req.body.address,
+            price: req.body.price,
+            bedrooms: req.body.bedrooms,
+            square_feet: req.body.square_feet,
+            link: req.body.link,
+            user_id: req.body.user_id,
+        
+        });
+
+        
+ 
+
+
+
+
+
+        res.status(200).json(dbHomeData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 
