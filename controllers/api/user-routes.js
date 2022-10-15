@@ -6,7 +6,7 @@ const { Home, User, Decor } = require('../../models');
 router.get('/', async (req, res) => {
     try {
         const dbUserData = await User.findAll({
-            include: [{ model: User }, { model: Decor }],
+            include: [{ model: Home }, { model: Decor }],
         });
   
         res.status(200).json(dbUserData);
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
       const dbUserData = await User.create({
-        username: req.body.username,
+        name: req.body.username,
         email: req.body.email,
         password: req.body.password,
       });
@@ -80,7 +80,7 @@ router.post('/login', async (req, res) => {
         req.session.loggedIn = true;
         //need this for calling the logged in user data
         req.session.user_id = dbUserData.id;
-        req.session.user_name = dbUserData.username;
+        req.session.user_name = dbUserData.name;
   
   
         res
