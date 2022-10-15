@@ -14,6 +14,22 @@ router.get('/', async (req, res) => {
     }
 });
 
+//GET a single home
+router.get('/:id', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+        });
+        //for testing routes
+        res.status(200).json(dbHomeData);
+        
+        //   const decors = dbDecorData.map((blog) => blog.get({ plain: true }));
+        // res.render('decor', { decors, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.post('/', async (req, res) => {
     try {
         const dbHomeData = await Home.create(req.body, {
@@ -27,14 +43,6 @@ router.post('/', async (req, res) => {
             user_id: req.body.user_id,
         
         });
-
-        
- 
-
-
-
-
-
         res.status(200).json(dbHomeData);
     } catch (err) {
         res.status(500).json(err);
@@ -42,19 +50,5 @@ router.post('/', async (req, res) => {
 });
 
 
-
-// async function getHomes() {
-//     try {
-//         const dbHomeData = await Home.findAll({
-//             include: [{ model: User }, { model: Decor }],
-//         });
-//         const response = await axios.get('/');
-//         res.status(200).json(dbHomeData);
-//     } catch (error) {
-//         res.status(500).json(err);
-//     }
-// }
-
-// getHomes();
 
 module.exports = router;

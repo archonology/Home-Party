@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       const dbUserData = await User.findByPk(req.params.id,{
-        include: [{ model: User }, { model: Decor }],
+        include: [{ model: Home }, { model: Decor }],
       });
   
       res.status(200).json(dbUserData);
@@ -30,9 +30,11 @@ router.get('/:id', async (req, res) => {
 
   //CREATE new user
 router.post('/', async (req, res) => {
+  console.log(req.body);
+  console.log(req.session);
     try {
       const dbUserData = await User.create({
-        name: req.body.username,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password,
       });

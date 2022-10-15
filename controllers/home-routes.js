@@ -1,6 +1,6 @@
 const router = require('express').Router();
-//needs model connections in the curly fries
 const { Home, Decor, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 //GET Routes
 //GET the login/signup page
@@ -41,9 +41,14 @@ router.get('/', async (req, res) => {
 });
 
 //GET the homes and decor to the dashboard 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
+    console.log(req.body);
+    console.log(req.session);
     try {
         const dbHomeData = await Home.findAll({
+            where: {
+                user_id: req.session.user_id
+              },
 
             include: [
                 { model: User },
@@ -52,6 +57,9 @@ router.get('/dashboard', async (req, res) => {
         });
 
         const dbDecorData = await Decor.findAll({
+            where: {
+                user_id: req.session.user_id
+              },
 
             include: [
                 { model: User },

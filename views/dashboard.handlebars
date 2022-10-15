@@ -30,7 +30,7 @@
         <h5 class="card-title">{{home.address}}</h5>
         <h6 class="card-subtitle mb-2 text-dark">Added on
             {{home.date_saved}}</h6>
-        <p class="card-text">{{home.title}} -- {{home.user.name}}</p>
+        <p class="card-text">{{home.title}} -- {{home.user.username}}</p>
         <div class="flex-d justify-content-center">
           <a href="/dashboard/homedecor"><button id="decor-link" class="btn card-link">Decor for this home</button></a>
           <a href="/dashboard/updatehome"><button id="update-link" class="btn card-link">Update this home</button></a>
@@ -50,7 +50,7 @@
         <h5 class="card-title">{{decor.product_name}}</h5>
       <h6 class="card-subtitle mb-2 text-dark">Added on
         {{decor.date_saved}} || <strong>${{decor.price}}</strong> </h6>
-        <p class="card-text">{{decor.description}} -- {{decor.user.name}}</p>
+        <p class="card-text">{{decor.description}} -- {{decor.user.username}}</p>
         <div class="flex-d justify-content-center">
           <a href="/dashboard/decorhomes"><button id="decor-link" class="btn card-link">Homes for this decor</button></a>
           <a href="/dashboard/updatedecore"><button id="update-link" class="btn card-link">Update this home</button></a>
