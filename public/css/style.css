@@ -50,6 +50,7 @@ body p {
   font-size: 60px;
   margin: 0.5em;
   color: var(--partymore);
+  text-shadow: 6px 4px var(--royal);
 }
 
 .nav-link {
@@ -76,7 +77,9 @@ main {
 }
 
 .logout {
-  background-color: var(--cherry);
+  background-color: var(--lisafrank);
+  color: var(--unicorn);
+  margin-right: 2em;
 }
 
 h2 {
@@ -179,6 +182,11 @@ p {
   font-weight: bold;
 }
 
+.page-title {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 40px;
+}
+
 
 
 .update {
@@ -191,7 +199,6 @@ p {
 
 .navbar-brand h1:hover {
   color: var(--lisafrank);
-  font-style: none;
 }
 
 .login:hover {
@@ -199,7 +206,7 @@ p {
 }
 
 .logout:hover {
-  background-color: #762a24;
+  background-color: var(--night);
 }
 
 .card-link:hover {
