@@ -16,21 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-//GET a single home
-router.get('/:id', async (req, res) => {
-    try {
-        const dbHomeData = await Home.findByPk(req.params.id, {
-            include: [{ model: User }, { model: Decor }],
-        });
-        //for testing routes
-        res.status(200).json(dbHomeData);
 
-        //   const decors = dbDecorData.map((blog) => blog.get({ plain: true }));
-        // res.render('decor', { decors, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 router.post('/', async (req, res) => {
     // for testing route

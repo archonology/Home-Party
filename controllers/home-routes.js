@@ -46,6 +46,22 @@ router.get("/", async (req, res) => {
     }
 });
 
+//GET a single home
+//GET a single post
+router.get('/homes/:id', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('targetHome', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 //GET the homes and decor to the dashboard
 router.get("/dashboard", withAuth, async (req, res) => {
     console.log(req.body);

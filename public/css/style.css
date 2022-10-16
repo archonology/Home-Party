@@ -15,7 +15,8 @@
 :root {
   --jetblack: #000000;
   --asphault: #313232;
-  --cherry: #cd2323;
+  --ultraman: #cd2323;
+  --mikey: rgb(255, 140, 0);
   --unicorn: #f8f6fa;
   --lisafrank: #804594;
   --alonzo: #159696;
@@ -93,7 +94,9 @@ p {
   color: var(--jetblack);
 }
 
-
+.targetHome {
+  background-color: var(--mikey);
+}
 
 .user-box {
   width: 12em;
@@ -149,7 +152,7 @@ p {
 }
 
 .home-card {
-  background-color: var(--cake);
+  background-color: var(--mikey);
   border-radius: 8px;
 }
 
@@ -208,7 +211,7 @@ p {
 }
 
 .card-link:hover {
-  background-color: var(--cherry);
+  background-color: var(--ultraman);
   color: var(--unicorn);
 }
 
