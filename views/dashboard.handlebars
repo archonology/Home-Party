@@ -22,10 +22,8 @@
         <h6 class="card-subtitle mb-2 text-dark">Added on
             {{home.date_saved}}</h6>
         <p class="card-text">{{home.title}} -- {{home.user.username}}</p>
-        <div class="d-flex flex-wrap justify-content-center">
-          <a href="/dashboard/homedecor"><button id="decor-link" class="btn card-link">Decor for this home</button></a>
-          <a href="/dashboard/updatehome"><button id="update-link" class="btn card-link">Update this home</button></a>
-          <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">See this home</button></a>
+        <div class="">
+          <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
         </div>
       </div>
     </div>
@@ -41,10 +39,8 @@
       <h6 class="card-subtitle mb-2 text-dark">Added on
         {{decor.date_saved}} || <strong>${{decor.price}}</strong> </h6>
         <p class="card-text">{{decor.description}} -- {{decor.user.username}}</p>
-        <div class="d-flex flex-wrap justify-content-center">
-          <a href="/dashboard/decorhomes"><button id="decor-link" class="btn card-link">Homes for this decor</button></a>
-          <a href="/dashboard/updatedecore"><button id="update-link" class="btn card-link">Update this home</button></a>
-          <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">See this decor</button></a>
+        <div class="">
+          <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
         </div>
       </div>
     </div>

@@ -1,17 +1,3 @@
-/* :root {
-  --latenight: #2b3650;
-  --coal: #302c2c;
-  --darkfire: #762a24;
-  --fire: #a84124;
-  --gardendusk: #536135;
-  --garden: #3a7149;
-  --midnight: #102659;
-  --beach: #c39668;
-  --lowsun: rgb(197, 144, 19);
-  --light: #f2e6d3;
-  --dark: #182c23;
-} */
-
 :root {
   --jetblack: #000000;
   --asphault: #313232;
@@ -52,6 +38,7 @@ header h1 {
   margin: 0.5em;
   color: var(--partymore);
   text-shadow: 6px 4px var(--royal);
+  padding: 1em;
 }
 
 .nav-link {

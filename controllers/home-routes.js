@@ -91,6 +91,15 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 });
 
+//GET the add home form
+router.get("/dashboard/addhome", async (req, res) => {
+    if (req.session.loggedIn) {
+        res.render("addhome");
+        return;
+    }
+    res.redirect("/");
+});
+
 router.get('/dashboard/:id', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
@@ -103,15 +112,6 @@ router.get('/dashboard/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-});
-
-//GET the add home form
-router.get("/dashboard/addhome", async (req, res) => {
-    if (req.session.loggedIn) {
-        res.render("addhome");
-        return;
-    }
-    res.redirect("/");
 });
 
 module.exports = router;
