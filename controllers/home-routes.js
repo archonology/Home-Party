@@ -91,6 +91,20 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 });
 
+router.get('/dashboard/:id', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('dashHomes', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 //GET the add home form
 router.get("/dashboard/addhome", async (req, res) => {
     if (req.session.loggedIn) {

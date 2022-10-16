@@ -24,7 +24,7 @@
   --woods: rgb(65, 39, 19) 8;
   --party: rgb(215, 192, 15);
   --partymore: rgb(252, 225, 18);
-  --royal: #460d5c;
+  --royal: #581373;
   --cake: #e99dc1;
 }
 
@@ -112,7 +112,7 @@ p {
 }
 
 #addhome-link {
-  background-color: var(--jetblack);
+  background-color: var(--ultraman);
   color: var(--unicorn);
 }
 
@@ -226,7 +226,7 @@ p {
 }
 
 #addhome-link:hover {
-  background-color: #34677d;
+  background-color: var(--royal);
 }
 
 #moredecor-link:hover {
