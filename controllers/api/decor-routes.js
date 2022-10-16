@@ -15,9 +15,9 @@ router.get('/', async (req, res) => {
 });
 
 //GET a single decor
-router.get('/posts/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        const dbDecorData = await Blog.findByPk(req.params.id, {
+        const dbDecorData = await Decor.findByPk(req.params.id, {
             include: [{ model: User }, { model: Home }],
         });
         //for testing routes
@@ -55,8 +55,8 @@ router.post('/', async (req, res) => {
 //DELETE route for the views
 router.delete('/:id', async (req, res) => {
     try {
-        const dbDecorData = await Blog.destroy(req.body, {
-            include: [{ model: User }, { model: Comment }],
+        const dbDecorData = await Decor.destroy(req.body, {
+            include: [{ model: User }, { model: Home }],
             title: req.body.title,
             post: req.body.post,
             user_id: req.session.user_id,
