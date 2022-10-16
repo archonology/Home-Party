@@ -4,7 +4,7 @@
       "description": "would be great in the yard!",
       "price": 6999.99,
       "link": "sculpture.com",
-      "user_id": 1,
+      "user_id": 4,
       "home_id": 1
     },
     {
@@ -29,6 +29,6 @@
           "price": 799.99,
           "link": "dishwasher.com",
           "user_id": 1,
-          "home_id": 3
+          "home_id": 4
       }
   ]

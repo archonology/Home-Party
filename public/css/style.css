@@ -45,7 +45,7 @@ body p {
   background-color: var(--alonzo);
 }
 
-.navbar-brand h1 {
+header h1 {
   font-family: "Luckiest Guy", cursive;
   font-size: 60px;
   margin: 0.5em;
@@ -108,26 +108,6 @@ p {
   margin-top: 1em;
 }
 
-#homes-tab {
-  font-family: 'Gochi Hand', cursive;
-  background-color: var(--lisafrank);
-  color: var(--unicorn);
-  font-size: 30px;
-  border: none;
-  width: 20em;
-  padding: .5em;
-}
-
-#decor-tab {
-  font-family: 'Gochi Hand', cursive;
-  background-color: var(--alonzo);
-  color: var(--unicorn);
-  font-size: 30px;
-  border: none;
-  width: 20em;
-  padding: .5em;
-}
-
 #addhome-link {
   background-color: var(--jetblack);
   color: var(--unicorn);
@@ -137,6 +117,28 @@ p {
   background-color:var(--asphault);
   color: var(--unicorn);
 }
+
+#homes-tab {
+  font-family: 'Gochi Hand', cursive;
+  background-color: var(--lisafrank);
+  color: var(--unicorn);
+  font-size: 30px;
+  border: none;
+  width: 10.5em;
+  padding: .5em;
+}
+
+#decor-tab {
+  font-family: 'Gochi Hand', cursive;
+  background-color: var(--alonzo);
+  color: var(--unicorn);
+  font-size: 30px;
+  border: none;
+  width: 10.5em;
+  padding: .5em;
+}
+
+
 
 .nav-tabs {
   border: none;
@@ -195,10 +197,6 @@ p {
 
 .delete {
   background-color: #c64a41;
-}
-
-.navbar-brand h1:hover {
-  color: var(--lisafrank);
 }
 
 .login:hover {

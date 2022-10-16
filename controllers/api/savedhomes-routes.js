@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Home, User, Decor } = require('../../models');
+const withAuth = require("../../utils/auth");
+
 
 // GET all saved homes (api/homes)
 router.get('/', async (req, res) => {
@@ -42,6 +44,7 @@ router.post('/', async (req, res) => {
             address: req.body.address,
             price: req.body.price,
             bedrooms: req.body.bedrooms,
+            bathrooms: req.body.bathrooms,
             square_feet: req.body.square_feet,
             link: req.body.link,
             user_id: req.session.user_id,

@@ -2,7 +2,7 @@
  <a href="/dashboard/addhome"><button id="addhome-link" class="btn card-link">Add a Home</button></a>
   <a href="/dashboard/moredecor"><button id="moredecor-link" class="btn card-link">Add Decor</button></a>
   </div>
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs d-flex justify-content-start" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="homes-tab" data-toggle="tab" href="#homes" role="tab" aria-controls="homes"
       aria-selected="true">Homes</a>
@@ -12,8 +12,8 @@
       aria-selected="false">Decor</a>
   </li>
 </ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="homes" role="tabpanel" aria-labelledby="home-tab">
+<div class="tab-content d-flex flex-wrap justify-content-start" id="myTabContent">
+  <div class="tab-pane fade show active justify-content-left" id="homes" role="tabpanel" aria-labelledby="home-tab">
     {{!-- <div class="each-home">
 
       {{#each homes as |home|}}
@@ -24,14 +24,13 @@
     </div> --}}
     {{#each homes as |home|}}
     <br />
-    <section>
     <div class="home-card" style="width: 40rem;">
       <div class="card-body p-3">
         <h5 class="card-title">{{home.address}}</h5>
         <h6 class="card-subtitle mb-2 text-dark">Added on
             {{home.date_saved}}</h6>
         <p class="card-text">{{home.title}} -- {{home.user.username}}</p>
-        <div class="flex-d justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center">
           <a href="/dashboard/homedecor"><button id="decor-link" class="btn card-link">Decor for this home</button></a>
           <a href="/dashboard/updatehome"><button id="update-link" class="btn card-link">Update this home</button></a>
           <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">See this home</button></a>
@@ -39,9 +38,8 @@
       </div>
     </div>
     {{/each}}
-</section>
   </div>
-  <div class="tab-pane fade" id="decor" role="tabpanel" aria-labelledby="decor-tab">
+  <div class="tab-pane fade " id="decor" role="tabpanel" aria-labelledby="decor-tab">
 
     {{#each decors as |decor|}}
     <br />
@@ -51,7 +49,7 @@
       <h6 class="card-subtitle mb-2 text-dark">Added on
         {{decor.date_saved}} || <strong>${{decor.price}}</strong> </h6>
         <p class="card-text">{{decor.description}} -- {{decor.user.username}}</p>
-        <div class="flex-d justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center">
           <a href="/dashboard/decorhomes"><button id="decor-link" class="btn card-link">Homes for this decor</button></a>
           <a href="/dashboard/updatedecore"><button id="update-link" class="btn card-link">Update this home</button></a>
           <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">See this decor</button></a>
