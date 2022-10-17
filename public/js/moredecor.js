@@ -9,7 +9,7 @@ const addDecorFormHandler = async (event) => {
 
     if (product_name && description && price && link) {
         // do I have the path I need in routes?
-        const response = await fetch('/api/homes', {
+        const response = await fetch('/api/decor', {
             method: 'POST',
             body: JSON.stringify({ product_name, description, price, link }),
             headers: { 'Content-Type': 'application/json' },
