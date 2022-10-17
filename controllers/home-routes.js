@@ -47,7 +47,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const dbHomeData = await Home.findAll({
             where: {
-                user_id: req.session.user_id
+                //user_id: req.session.user_id
+                user_id: 1
               },
 
             include: [
@@ -58,7 +59,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         const dbDecorData = await Decor.findAll({
             where: {
-                user_id: req.session.user_id
+                // user_id: req.session.user_id
+                user_id: 1
               },
 
             include: [
@@ -69,6 +71,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         const homes = dbHomeData.map((home) => home.get({ plain: true }));
         const decors = dbDecorData.map((decor) => decor.get({ plain: true }));
+        console.log(homes)
         res.render('dashboard', { homes, decors, loggedIn: req.session.loggedIn, });
     } catch (err) {
         res.status(500).json(err);
@@ -88,5 +91,19 @@ router.get('/subscribe', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/dashboard/updatehome', async (req, res) => {
+    try {
+        const dbUserData = await User.findAll({
+            attributes: { exclude: ['password'] }
+        });
+
+        const users = dbUserData.map((user) => user.get({ plain: true }));
+        res.render('savedhomes', { users, loggedIn: req.session.loggedIn, });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;
