@@ -44,10 +44,10 @@ router.post('/', async (req, res) => {
             price: req.body.price,
             link: req.body.link,
             user_id: req.session.user_id,
-            // home_id: how to query?
+            home_id: req.session.home_id,
 
         });
-        res.status(200).json(dbHomeData);
+        res.status(200).json(dbDecorData);
 
     } catch (err) {
         res.status(500).json(err);

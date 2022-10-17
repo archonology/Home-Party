@@ -1,16 +1,17 @@
 :root {
   --jetblack: #000000;
-  --asphault: #313232;
+  --pitstop: #313232;
   --ultraman: #cd2323;
   --mikey: rgb(255, 140, 0);
   --unicorn: #f8f6fa;
-  --lisafrank: #804594;
+  --donnie: #804594;
   --alonzo: #159696;
-  --night: #0d338a;
-  --woods: rgb(65, 39, 19) 8;
+  --sonic: #0d338a;
+  --sonic2: #336ffb;
   --party: rgb(215, 192, 15);
   --partymore: rgb(252, 225, 18);
-  --royal: #581373;
+  --berrykix: #581373;
+  --flash: #fb308f;
   --cake: #e99dc1;
 }
 
@@ -22,10 +23,10 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--party);
-  color: var(--asphault);
+  color: var(--pitstop);
 }
 body p {
-  color: var(--asphault);
+  color: var(--pitstop);
 }
 
 .navbar {
@@ -34,10 +35,9 @@ body p {
 
 header h1 {
   font-family: "Luckiest Guy", cursive;
-  font-size: 60px;
-  margin: 0.5em;
+  font-size: 72px;
   color: var(--partymore);
-  text-shadow: 6px 4px var(--royal);
+  text-shadow: 6px 4px var(--berrykix);
   padding: 1em;
 }
 
@@ -46,9 +46,6 @@ header h1 {
   font-family: 'Gochi Hand', cursive;
   font-size: 30px;
 }
-/* .navbar h1 {
-
-} */
 
 main {
   margin: 3em;
@@ -65,7 +62,7 @@ main {
 }
 
 .logout {
-  background-color: var(--lisafrank);
+  background-color: var(--donnie);
   color: var(--unicorn);
   margin-right: 2em;
 }
@@ -73,69 +70,12 @@ main {
 h2 {
   text-align: center;
   font-family: 'Gochi Hand', cursive;
-  color: var(--asphault);
+  color: var(--pitstop);
   font-size: 40px;
 }
 p {
   text-decoration: none;
   color: var(--jetblack);
-}
-
-.targetHome {
-  background-color: var(--mikey);
-}
-
-.user-box {
-  width: 12em;
-}
-
-.each-post {
-  border-bottom: var(--asphault) solid 2px;
-  margin-bottom: 1em;
-}
-
-.dropdown {
-  margin-top: 1em;
-}
-
-#addhome-link {
-  background-color: var(--ultraman);
-  color: var(--unicorn);
-}
-
-#moredecor-link {
-  background-color:var(--asphault);
-  color: var(--unicorn);
-}
-
-#homes-tab {
-  font-family: 'Gochi Hand', cursive;
-  background-color: var(--lisafrank);
-  color: var(--unicorn);
-  font-size: 30px;
-  border: none;
-  width: 10.5em;
-  padding: .5em;
-}
-
-#decor-tab {
-  font-family: 'Gochi Hand', cursive;
-  background-color: var(--alonzo);
-  color: var(--unicorn);
-  font-size: 30px;
-  border: none;
-  width: 10.5em;
-  padding: .5em;
-}
-
-
-
-.nav-tabs {
-  border: none;
-}
-
-#homes {
-  margin-bottom: 2em;
 }
 
 .home-card {
@@ -144,7 +84,7 @@ p {
 }
 
 .decor-card {
-  background-color: var(--lisafrank);
+  background-color: var(--donnie);
   border-radius: 8px;
 }
 
@@ -158,7 +98,7 @@ p {
 }
 
 .card-text {
-  color: var(--asphault);
+  color: var(--pitstop);
   font-weight: bold;
 }
 
@@ -174,12 +114,62 @@ p {
   font-weight: bold;
 }
 
+.targetHome {
+  background-color: var(--mikey);
+  border-radius: 8px;
+}
+
+.user-box {
+  width: 12em;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+#homes-tab {
+  font-family: 'Gochi Hand', cursive;
+  background-color: var(--sonic);
+  color: var(--unicorn);
+  font-size: 30px;
+  border: none;
+  width: 10.5em;
+  padding: .5em;
+}
+
+#decor-tab {
+  font-family: 'Gochi Hand', cursive;
+  background-color: var(--flash);
+  color: var(--unicorn);
+  font-size: 30px;
+  border: none;
+  width: 10.5em;
+  padding: .5em;
+}
+
+.dropdown {
+  margin-top: 1em;
+}
+
+#addhome-link {
+  background-color: var(--ultraman);
+  color: var(--unicorn);
+}
+
+#moredecor-link {
+  background-color:var(--pitstop);
+  color: var(--unicorn);
+}
+
+#homes {
+  margin-bottom: 2em;
+}
+
+
 .page-title {
   font-family: 'Gochi Hand', cursive;
   font-size: 40px;
 }
-
-
 
 .update {
   background-color: #deac08;
@@ -190,11 +180,19 @@ p {
 }
 
 .login:hover {
-  background-color: var(--lisafrank);
+  background-color: var(--donnie);
 }
 
 .logout:hover {
-  background-color: var(--night);
+  background-color: var(--sonic);
+}
+
+.home-card:hover {
+  background-color: var(--sonic2)
+}
+
+.decor-card:hover {
+  background-color: var(--flash);
 }
 
 .card-link:hover {
@@ -204,16 +202,16 @@ p {
 
 #homes-tab:hover {
   text-decoration: none;
-  background-color: #6d3ea4;
+  background-color: #15fa43;
 }
 
 #decor-tab:hover {
   text-decoration: none;
-  background-color: #2a9ea4;
+  background-color: #8b098e;
 }
 
 #addhome-link:hover {
-  background-color: var(--royal);
+  background-color: var(--berrykix);
 }
 
 #moredecor-link:hover {

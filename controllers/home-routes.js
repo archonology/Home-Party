@@ -102,11 +102,24 @@ router.get("/dashboard/addhome", async (req, res) => {
     res.redirect("/");
 });
 
+//GET the add decor form
+router.get("/dashboard/moredecor", async (req, res) => {
+    if (req.session.loggedIn) {
+        res.render("moredecor");
+        return;
+    }
+    res.redirect("/");
+});
+
 router.get('/dashboard/:id', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
           });
+
+          req.session.save(() => {
+            req.session.home_id = req.params.id;
+    });
 
         const homes = dbHomeData.get({ plain: true });
         // res.status(200).json(dbBlogData);
@@ -129,6 +142,7 @@ router.get('/dashboard/updatehome', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 
 
