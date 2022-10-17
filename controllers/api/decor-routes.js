@@ -47,6 +47,7 @@ router.post('/', async (req, res) => {
             home_id: req.session.home_id,
 
         });
+        console.log("Home session id" + req.session.home_id);
         res.status(200).json(dbDecorData);
 
     } catch (err) {

@@ -8,7 +8,6 @@ const addDecorFormHandler = async (event) => {
     const link = document.querySelector('#decor-link').value.trim();
 
     if (product_name && description && price && link) {
-        // do I have the path I need in routes?
         const response = await fetch('/api/decor', {
             method: 'POST',
             body: JSON.stringify({ product_name, description, price, link }),

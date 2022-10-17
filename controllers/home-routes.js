@@ -69,8 +69,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     try {
         const dbHomeData = await Home.findAll({
             where: {
-                //user_id: req.session.user_id
-                user_id: 1
+                user_id: req.session.user_id
               },
 
             include: [{ model: User }, { model: Decor }],
@@ -78,8 +77,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
         const dbDecorData = await Decor.findAll({
             where: {
-                // user_id: req.session.user_id
-                user_id: 1
+                user_id: req.session.user_id
               },
 
             include: [{ model: User }, { model: Home }],
@@ -111,6 +109,7 @@ router.get("/dashboard/moredecor", async (req, res) => {
     res.redirect("/");
 });
 
+// get a single post
 router.get('/dashboard/:id', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
@@ -119,8 +118,8 @@ router.get('/dashboard/:id', async (req, res) => {
 
           req.session.save(() => {
             req.session.home_id = req.params.id;
+            console.log(req.session.home_id);
     });
-
         const homes = dbHomeData.get({ plain: true });
         // res.status(200).json(dbBlogData);
         res.render('dashHomes', { homes, loggedIn: req.session.loggedIn,});
