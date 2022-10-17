@@ -118,16 +118,18 @@ router.get('/dashboard/:id', async (req, res) => {
 
 router.get('/dashboard/updatehome', async (req, res) => {
     try {
-        const dbUserData = await User.findAll({
-            attributes: { exclude: ['password'] }
-        });
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
 
-        const users = dbUserData.map((user) => user.get({ plain: true }));
-        res.render('savedhomes', { users, loggedIn: req.session.loggedIn, });
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('updatehome', { homes, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 
 module.exports = router;
