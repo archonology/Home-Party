@@ -1,0 +1,49 @@
+<div class="row d-flex justify-content-center">
+    <div class="addhome-card" style="width: 30rem;">
+        <h3 class="page-title">Add a home</h3>
+        <p></p>
+        <form class="form addhome-form">
+
+            <div class="form-group">
+                <label for="home-title">First, a short description of the home:</label>
+                <input class="form-input" type="text" id="home-title" />
+            </div>
+
+            <div class="form-group">
+                <label for="home-address">Address of the home:</label>
+                <input class="form-input" type="text" id="home-address" />
+            </div>
+
+            <div class="form-group">
+                <label for="home-price">Cost of the home:</label>
+                <input class="form-input" {{!-- needs error handingly to deal with decimals --}} type="number"
+                    id="home-price" />
+            </div>
+
+            <div class="form-group">
+                <label for="home-bedrooms">Number of bedrooms:</label>
+                <input class="form-input" type="number" id="home-bedrooms" />
+            </div>
+
+            <div class="form-group">
+                <label for="home-bathrooms">Number of bathrooms:</label>
+                <input class="form-input" type="number" id="home-bathrooms" />
+            </div>
+
+            <div class="form-group">
+                <label for="home-size">Square Feet:</label>
+                <input class="form-input" {{!-- needs error handingly to deal with decimals --}} type="number"
+                    id="home-size" />
+            </div>
+
+            <div class="form-group">
+                <label for="home-link">Link to home:</label>
+                <input class="form-input" type="text" id="home-link" />
+            </div>
+            {{!-- make sure to tag the user id to this via the post route --}}
+            <button class="btn btn-primary subscribe-btn mt-3" type="submit">Add Home</button>
+    </div>
+    </form>
+
+
+    <script src="/js/addhome.js"></script>

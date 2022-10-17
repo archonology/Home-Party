@@ -32,21 +32,23 @@ router.get('/:id', async (req, res) => {
 
 //post route for decor
 router.post('/', async (req, res) => {
+    // for testing route
+    console.log(req.body);
+    console.log(req.session);
+
     try {
-        const dbDecorData = await Decor.create(req.body, {
-            include: [{ model: User }, { model: Comment }],
+        const dbDecorData = await Decor.create({
+
             product_name: req.body.product_name,
             description: req.body.description,
             price: req.body.price,
             link: req.body.link,
-            home_id: req.session.home_id, //need to attach through session?,
-            user_id: req.session.user_id,//need to attach through session?
-        });
+            user_id: req.session.user_id,
+            // home_id: how to query?
 
-        //for testing routes
-        res.status(200).json(dbDecorData);
-        // const decors = dbBlogData.map((decor) => decor.get({ plain: true }));
-        // res.render('dashboard', { decors, loggedIn: req.session.loggedIn, });
+        });
+        res.status(200).json(dbHomeData);
+
     } catch (err) {
         res.status(500).json(err);
     }

@@ -14,21 +14,21 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const blog of homeData) {
+  for (const home of homeData) {
     await Home.create({
-      ...blog,
+      ...home,
     });
   }
 
-  for (const comment of decorData) {
+  for (const decor of decorData) {
     await Decor.create({
-      ...comment,
+      ...decor,
     });
   }
 
-  for (const commentTag of designTagData) {
+  for (const designTag of designTagData) {
     await DesignTag.create({
-      ...commentTag,
+      ...designTag,
     });
   }
 
