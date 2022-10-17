@@ -7,7 +7,7 @@
   --donnie: #804594;
   --alonzo: #159696;
   --sonic: #0d338a;
-  --sonic2: #2362f5;
+  --sonic2: #336ffb;
   --party: rgb(215, 192, 15);
   --partymore: rgb(252, 225, 18);
   --berrykix: #581373;
@@ -35,8 +35,7 @@ body p {
 
 header h1 {
   font-family: "Luckiest Guy", cursive;
-  font-size: 60px;
-  margin: 0.5em;
+  font-size: 72px;
   color: var(--partymore);
   text-shadow: 6px 4px var(--berrykix);
   padding: 1em;
