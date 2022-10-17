@@ -69,16 +69,18 @@ router.get("/dashboard", withAuth, async (req, res) => {
     try {
         const dbHomeData = await Home.findAll({
             where: {
-                user_id: req.session.user_id,
-            },
+                //user_id: req.session.user_id
+                user_id: 1
+              },
 
             include: [{ model: User }, { model: Decor }],
         });
 
         const dbDecorData = await Decor.findAll({
             where: {
-                user_id: req.session.user_id,
-            },
+                // user_id: req.session.user_id
+                user_id: 1
+              },
 
             include: [{ model: User }, { model: Home }],
         });
@@ -113,5 +115,21 @@ router.get('/dashboard/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/dashboard/updatehome', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('updatehome', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 
 module.exports = router;
