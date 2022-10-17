@@ -1,21 +1,8 @@
-/* :root {
-  --latenight: #2b3650;
-  --coal: #302c2c;
-  --darkfire: #762a24;
-  --fire: #a84124;
-  --gardendusk: #536135;
-  --garden: #3a7149;
-  --midnight: #102659;
-  --beach: #c39668;
-  --lowsun: rgb(197, 144, 19);
-  --light: #f2e6d3;
-  --dark: #182c23;
-} */
-
 :root {
   --jetblack: #000000;
   --asphault: #313232;
-  --cherry: #cd2323;
+  --ultraman: #cd2323;
+  --mikey: rgb(255, 140, 0);
   --unicorn: #f8f6fa;
   --lisafrank: #804594;
   --alonzo: #159696;
@@ -23,7 +10,7 @@
   --woods: rgb(65, 39, 19) 8;
   --party: rgb(215, 192, 15);
   --partymore: rgb(252, 225, 18);
-  --royal: #460d5c;
+  --royal: #581373;
   --cake: #e99dc1;
 }
 
@@ -45,12 +32,13 @@ body p {
   background-color: var(--alonzo);
 }
 
-.navbar-brand h1 {
+header h1 {
   font-family: "Luckiest Guy", cursive;
   font-size: 60px;
   margin: 0.5em;
   color: var(--partymore);
   text-shadow: 6px 4px var(--royal);
+  padding: 1em;
 }
 
 .nav-link {
@@ -93,7 +81,9 @@ p {
   color: var(--jetblack);
 }
 
-
+.targetHome {
+  background-color: var(--mikey);
+}
 
 .user-box {
   width: 12em;
@@ -108,13 +98,23 @@ p {
   margin-top: 1em;
 }
 
+#addhome-link {
+  background-color: var(--ultraman);
+  color: var(--unicorn);
+}
+
+#moredecor-link {
+  background-color:var(--asphault);
+  color: var(--unicorn);
+}
+
 #homes-tab {
   font-family: 'Gochi Hand', cursive;
   background-color: var(--lisafrank);
   color: var(--unicorn);
   font-size: 30px;
   border: none;
-  width: 20em;
+  width: 10.5em;
   padding: .5em;
 }
 
@@ -124,19 +124,11 @@ p {
   color: var(--unicorn);
   font-size: 30px;
   border: none;
-  width: 20em;
+  width: 10.5em;
   padding: .5em;
 }
 
-#addhome-link {
-  background-color: var(--jetblack);
-  color: var(--unicorn);
-}
 
-#moredecor-link {
-  background-color:var(--asphault);
-  color: var(--unicorn);
-}
 
 .nav-tabs {
   border: none;
@@ -147,7 +139,7 @@ p {
 }
 
 .home-card {
-  background-color: var(--cake);
+  background-color: var(--mikey);
   border-radius: 8px;
 }
 
@@ -197,10 +189,6 @@ p {
   background-color: #c64a41;
 }
 
-.navbar-brand h1:hover {
-  color: var(--lisafrank);
-}
-
 .login:hover {
   background-color: var(--lisafrank);
 }
@@ -210,7 +198,7 @@ p {
 }
 
 .card-link:hover {
-  background-color: var(--cherry);
+  background-color: var(--ultraman);
   color: var(--unicorn);
 }
 
@@ -225,7 +213,7 @@ p {
 }
 
 #addhome-link:hover {
-  background-color: #34677d;
+  background-color: var(--royal);
 }
 
 #moredecor-link:hover {

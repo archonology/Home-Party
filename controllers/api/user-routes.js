@@ -1,6 +1,7 @@
 const router = require('express').Router();
 //needs model connections in the curly fries
 const { Home, User, Decor } = require('../../models');
+const withAuth = require("../../utils/auth");
 
 // GET all user info (api/users)
 router.get('/', async (req, res) => {
@@ -82,7 +83,7 @@ router.post('/login', async (req, res) => {
         req.session.loggedIn = true;
         //need this for calling the logged in user data
         req.session.user_id = dbUserData.id;
-        req.session.user_name = dbUserData.name;
+        req.session.user_name = dbUserData.username;
   
   
         res
@@ -105,22 +106,6 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
-
-
-  //axios formatting
-// async function getUsers() {
-//     try {
-//         const dbUserData = await User.findAll({
-//             include: [{ model: Home }, { model: Decor }],
-//         });
-//         const response = await axios.get('/users');
-//         res.status(200).json(dbUserData);
-//     } catch (error) {
-//         res.status(500).json(err);
-//     }
-// }
-
-// getUsers();
 
 
 module.exports = router;
