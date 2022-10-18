@@ -134,6 +134,25 @@ router.get('/dashboard/:id', async (req, res) => {
     }
 });
 
+// get a single post
+router.get('/dashboard/:id', async (req, res) => {
+    try {
+        const decorData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+          console.log(req.params.id);
+          req.session.save(() => {
+            req.session.home_id = req.params.id;
+            console.log("what is the home id? " + req.session.home_id);
+    });
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('dashHomes', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/dashboard/updatehome', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
