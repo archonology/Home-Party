@@ -101,12 +101,18 @@ router.get("/dashboard/addhome", async (req, res) => {
 });
 
 //GET the add decor form
-router.get("/dashboard/moredecor", async (req, res) => {
-    if (req.session.loggedIn) {
-        res.render("moredecor");
-        return;
+router.get("/dashboard/moredecor/:id", async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('moredecor', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
     }
-    res.redirect("/");
 });
 
 // get a single post
@@ -115,10 +121,10 @@ router.get('/dashboard/:id', async (req, res) => {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
           });
-
+          console.log(req.params.id);
           req.session.save(() => {
             req.session.home_id = req.params.id;
-            console.log(req.session.home_id);
+            console.log("what is the home id? " + req.session.home_id);
     });
         const homes = dbHomeData.get({ plain: true });
         // res.status(200).json(dbBlogData);
