@@ -35,7 +35,8 @@ router.post('/', async (req, res) => {
     // for testing route
     console.log(req.body);
     console.log(req.session);
-
+    console.log("Home session id" + req.session.home_id);
+    // let home_id = req.session.home_id
     try {
         const dbDecorData = await Decor.create({
 
@@ -44,10 +45,13 @@ router.post('/', async (req, res) => {
             price: req.body.price,
             link: req.body.link,
             user_id: req.session.user_id,
-            home_id: req.session.home_id,
+            home_id: 6,
 
         });
+        console.log(req.session);
+        console.log(dbDecorData);
         console.log("Home session id" + req.session.home_id);
+        console.log("user session id" + req.session.user_id);
         res.status(200).json(dbDecorData);
 
     } catch (err) {
