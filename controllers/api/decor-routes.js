@@ -47,15 +47,15 @@ router.post('/', async (req, res) => {
 
         });
 
-        const dbDesignTagData = await DesignTag.create({
+        // const dbDesignTagData = await DesignTag.create({
 
-            home_id: req.body.home_id,
-            // decor_id: req.session.user_id,
+        //     home_id: req.body.home_id,
+        //     // decor_id: req.session.user_id,
 
-        });
+        // });
 
         res.status(200).json(dbDecorData);
-        res.status(200).json(dbDesignTagData);
+        // res.status(200).json(dbDesignTagData);
 
     } catch (err) {
         res.status(500).json(err);
