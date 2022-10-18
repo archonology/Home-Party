@@ -134,6 +134,34 @@ router.get('/dashboard/:id', async (req, res) => {
     }
 });
 
+// get a single post
+router.get('/dashboard/decor/:id', async (req, res) => {
+    try {
+        const dbDecorData = await Decor.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Home }],
+          });
+         
+        const decors = dbDecorData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('dashdecors', { decors, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get ('/dashboard/updatedecor/:id', async (req, res) => {
+    try {
+        const dbDecorData = await Decor.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Home }],
+          });
+    
+        const decors = dbDecorData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('updatedecor', { decors, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/dashboard/updatehome', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
