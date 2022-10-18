@@ -136,8 +136,6 @@ router.get('/dashboard/:id', async (req, res) => {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
           });
-          req.session.save(() => {
-    });
         const homes = dbHomeData.get({ plain: true });
         // res.status(200).json(dbBlogData);
         res.render('dashHomes', { homes, loggedIn: req.session.loggedIn,});
