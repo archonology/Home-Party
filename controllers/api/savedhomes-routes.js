@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Home, User, Decor, HomeTag } = require('../../models');
-const withAuth = require("../../utils/auth");
+const { Home, User, Decor } = require('../../models');
 
 
 // GET all saved homes (api/homes)
