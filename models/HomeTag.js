@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class DesignTag extends Model {}
+class HomeTag extends Model {}
 
-DesignTag.init(
+HomeTag.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,28 +21,19 @@ DesignTag.init(
     },
     decor_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: 'decor',
-        key: 'id',
+        model: "decor",
+        key: "id",
       },
     },
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'user',
-          key: 'id',
-        },
-      },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'design_tag',
+    modelName: 'home_tag',
   }
 );
 
-module.exports = DesignTag;
+module.exports = HomeTag;

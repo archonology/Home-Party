@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Home, User, Decor } = require('../../models');
+const { Home, User, Decor, HomeTag } = require('../../models');
 
 //GET all saved decor and it's associations (api/decor)
 router.get('/', async (req, res) => {
@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
         });
         //for testing routes
         res.status(200).json(dbDecorData);
-        
+
         //   const decors = dbDecorData.map((blog) => blog.get({ plain: true }));
         // res.render('decor', { decors, loggedIn: req.session.loggedIn,});
     } catch (err) {
@@ -47,7 +47,15 @@ router.post('/', async (req, res) => {
 
         });
 
+        const dbDesignTagData = await DesignTag.create({
+
+            home_id: req.body.home_id,
+            // decor_id: req.session.user_id,
+
+        });
+
         res.status(200).json(dbDecorData);
+        res.status(200).json(dbDesignTagData);
 
     } catch (err) {
         res.status(500).json(err);

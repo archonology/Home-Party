@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Home, Decor, DesignTag } = require('../models');
+const { User, Home, Decor, HomeTag } = require('../models');
 
 const userData = require('./userData.json');
 const homeData = require('./homeData.json');
 const decorData = require('./decorData.json');
-const designTagData = require('./designTagData.json');
+const homeTagData = require('./homeTagData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -26,9 +26,9 @@ const seedDatabase = async () => {
     });
   }
 
-  for (const designTag of designTagData) {
-    await DesignTag.create({
-      ...designTag,
+  for (const homeTag of homeTagData) {
+    await HomeTag.create({
+      ...homeTag,
     });
   }
 
