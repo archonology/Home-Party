@@ -44,25 +44,29 @@ router.post('/', async (req, res) => {
 
 router.put('/dashboard/updatehome', async (req, res) => {
     try {
-        const dbHomeData = await Home.update( {
-           where:{
-            user_id: req.params.user_id,
+        const dbHomeData = await Home.update({
 
-           },
-           title: req.body.title,
-           address: req.body.address,
-           price: req.body.price,
-           bedrooms: req.body.bedrooms,
-           bathrooms: req.body.bathrooms,
-           square_feet: req.body.square_feet,
-           link: req.body.link,
-           user_id: req.session.user_id,
-           
-          });
+            title: req.body.title,
+            address: req.body.address,
+            price: Number(req.body.price),
+            bedrooms: Number(req.body.bedrooms),
+            bathrooms: Number(req.body.bathrooms),
+            square_feet: Number(req.body.square_feet),
+            link: req.body.link,
+            user_id: req.session.user_id,
 
-        
-         res.status(200).json(dbHomeData);
-    
+        },
+            {
+                where: {
+                    user_id: req.params.user_id,
+
+                },
+            }
+        );
+
+
+        res.status(200).json(dbHomeData);
+
     } catch (err) {
         res.status(500).json(err);
     }
