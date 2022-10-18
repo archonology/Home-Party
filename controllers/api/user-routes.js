@@ -1,7 +1,6 @@
 const router = require('express').Router();
 //needs model connections in the curly fries
 const { Home, User, Decor } = require('../../models');
-const withAuth = require("../../utils/auth");
 
 // GET all user info (api/users)
 router.get('/', async (req, res) => {

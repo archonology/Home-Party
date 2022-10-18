@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Home, User, Decor, HomeTag } = require('../../models');
+const { Home, User, Decor } = require('../../models');
 
 //GET all saved decor and it's associations (api/decor)
 router.get('/', async (req, res) => {
