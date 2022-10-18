@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
 
     console.log(req.body);
+    
 
     try {
         const dbDecorData = await Decor.create({
@@ -47,12 +48,37 @@ router.post('/', async (req, res) => {
 
         });
 
-        // const dbDesignTagData = await DesignTag.create({
 
-        //     home_id: req.body.home_id,
-        //     // decor_id: req.session.user_id,
+        res.status(200).json(dbDecorData);
+        // res.status(200).json(dbDesignTagData);
 
-        // });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//post route for decor
+router.put('/', async (req, res) => {
+
+    console.log(req.body);
+    console.log(req.session);
+
+    try {
+        const dbDecorData = await Decor.update({
+
+            where: {
+                id: req.body.decor_id,
+              },
+
+            product_name: req.body.product_name,
+            description: req.body.description,
+            price: req.body.price,
+            link: req.body.link,
+            user_id: req.session.user_id,
+            home_id: req.body.home_id,
+
+        });
+
 
         res.status(200).json(dbDecorData);
         // res.status(200).json(dbDesignTagData);
