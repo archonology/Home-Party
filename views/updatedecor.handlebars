@@ -16,8 +16,7 @@
 
             <div class="form-group">
                 <label for="decor-price">Cost of the item:</label>
-                <input class="form-input" {{!-- needs error handingly to deal with decimals --}} type="number"
-                    id="decor-price" />
+                <input class="form-input" type="number" id="decor-price" />
             </div>
 
             <div class="form-group">
@@ -29,12 +28,12 @@
             in decor-routes --}}
             <div class="form-group" hidden>
                 <label for="decor-id">Home Id:</label>
-                <input class="form-input" type="text" id="home-id" value="{{decors.home_id}}" />
+                <input class="form-input" type="number" id="home-id" value="{{decors.home_id}}" />
             </div>
 
             <div class="form-group" hidden>
                 <label for="decor-id">Decor Id:</label>
-                <input class="form-input" type="text" id="decor-id" value="{{decors.id}}" />
+                <input class="form-input" type="number" id="decor-id" value="{{decors.id}}" />
             </div>
 
             <button class="btn btn-primary subscribe-btn mt-3" type="submit">Update Decor</button>
