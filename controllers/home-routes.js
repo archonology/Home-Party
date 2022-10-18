@@ -99,6 +99,20 @@ router.get("/dashboard/addhome", async (req, res) => {
     }
     res.redirect("/");
 });
+//get to updated home
+router.get('/dashboard/updatehome', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('updatehome', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 //GET the add decor form
 router.get("/dashboard/moredecor/:id", async (req, res) => {
@@ -121,10 +135,7 @@ router.get('/dashboard/:id', async (req, res) => {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
           });
-          console.log(req.params.id);
           req.session.save(() => {
-            req.session.home_id = req.params.id;
-            console.log("what is the home id? " + req.session.home_id);
     });
         const homes = dbHomeData.get({ plain: true });
         // res.status(200).json(dbBlogData);
@@ -148,6 +159,7 @@ router.get('/dashboard/decor/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 router.get ('/dashboard/updatedecor/:id', async (req, res) => {
     try {
         const dbDecorData = await Decor.findByPk(req.params.id, {
@@ -162,19 +174,6 @@ router.get ('/dashboard/updatedecor/:id', async (req, res) => {
     }
 });
 
-router.get('/dashboard/updatehome', async (req, res) => {
-    try {
-        const dbHomeData = await Home.findByPk(req.params.id, {
-            include: [{ model: User }, { model: Decor }],
-          });
-
-        const homes = dbHomeData.get({ plain: true });
-        // res.status(200).json(dbBlogData);
-        res.render('updatehome', { homes, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 
 

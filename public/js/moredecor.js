@@ -6,11 +6,13 @@ const addDecorFormHandler = async (event) => {
     const description = document.querySelector('#decor-desc').value.trim();
     const price = document.querySelector('#decor-price').value;
     const link = document.querySelector('#decor-link').value.trim();
+    const home_id = document.querySelector('#home-id').value;
+    console.log(home_id);
 
-    if (product_name && description && price && link) {
+    if (product_name && description && price && link && home_id) {
         const response = await fetch('/api/decor', {
             method: 'POST',
-            body: JSON.stringify({ product_name, description, price, link }),
+            body: JSON.stringify({ product_name, description, price, link, home_id }),
             headers: { 'Content-Type': 'application/json' },
         });
 

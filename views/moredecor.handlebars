@@ -1,7 +1,7 @@
 <div class="row d-flex justify-content-center">
     <div class="addhome-card" style="width: 30rem;">
         <h3 class="page-title">Add decor</h3>
-        <p></p>
+        <p> hello {{homes.id}}</p>
         <form class="form moredecor-form">
 
             <div class="form-group">
@@ -24,6 +24,12 @@
                 <label for="decor-link">Link to the item:</label>
                 <input class="form-input" type="text" id="decor-link" />
             </div>
+                {{!-- this is hidden from viewer, but passed through to assign it to the current home --}}
+               <div class="form-group" hidden>
+                <label for="decor-id">Home Id:</label>
+                <input class="form-input" type="text" id="home-id" value="{{homes.id}}" />
+            </div>
+
             {{!-- make sure to tag the user id to this via the post route --}}
             <button class="btn btn-primary subscribe-btn mt-3" type="submit">Add Decor</button>
     </div>
