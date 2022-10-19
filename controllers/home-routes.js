@@ -47,20 +47,6 @@ router.get("/", async (req, res) => {
 });
 
 //GET a single home
-//GET a single post
-router.get('/homes/:id', async (req, res) => {
-    try {
-        const dbHomeData = await Home.findByPk(req.params.id, {
-            include: [{ model: User }, { model: Decor }],
-          });
-
-        const homes = dbHomeData.get({ plain: true });
-        // res.status(200).json(dbBlogData);
-        res.render('targetHome', { homes, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 //GET the homes and decor to the dashboard
 router.get("/dashboard", withAuth, async (req, res) => {
@@ -99,36 +85,8 @@ router.get("/dashboard/addhome", async (req, res) => {
     }
     res.redirect("/");
 });
-
-//GET the add decor form
-router.get("/dashboard/moredecor", async (req, res) => {
-    if (req.session.loggedIn) {
-        res.render("moredecor");
-        return;
-    }
-    res.redirect("/");
-});
-
-// get a single post
-router.get('/dashboard/:id', async (req, res) => {
-    try {
-        const dbHomeData = await Home.findByPk(req.params.id, {
-            include: [{ model: User }, { model: Decor }],
-          });
-
-          req.session.save(() => {
-            req.session.home_id = req.params.id;
-            console.log(req.session.home_id);
-    });
-        const homes = dbHomeData.get({ plain: true });
-        // res.status(200).json(dbBlogData);
-        res.render('dashHomes', { homes, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.get('/dashboard/updatehome', async (req, res) => {
+//get to updated home
+router.get('/dashboard/updatehome/:id', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
@@ -141,6 +99,80 @@ router.get('/dashboard/updatehome', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+//GET a single post
+router.get('/homes/:id', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('targetHome', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//GET the add decor form
+router.get("/dashboard/moredecor/:id", async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('moredecor', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// get a single post
+router.get('/dashboard/:id', async (req, res) => {
+    try {
+        const dbHomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+        const homes = dbHomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('dashHomes', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// get a single post
+router.get('/dashboard/decor/:id', async (req, res) => {
+    try {
+        const dbDecorData = await Decor.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Home }],
+          });
+         
+        const decors = dbDecorData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('dashdecors', { decors, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get ('/dashboard/updatedecor/:id', async (req, res) => {
+    try {
+        const dbDecorData = await Decor.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Home }],
+          });
+    
+        const decors = dbDecorData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('updatedecor', { decors, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 
 

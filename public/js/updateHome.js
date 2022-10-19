@@ -22,6 +22,7 @@ const updateHomeFormHandler = async (event) => {
         }
     }
 };
+
 document
     .querySelector('.updatehome-form')
-    .addEventListener('submit', updateHomeFormHandler);
+    .addEventListener('submit', updateHomeFormHandler);    

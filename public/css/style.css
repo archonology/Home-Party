@@ -102,6 +102,13 @@ p {
   font-weight: bold;
 }
 
+.home-data {
+  /* background-color: var(--sonic2);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px; */
+}
+
 .decor-card .card-text {
   color: var(--cake);
   font-weight: bold;

@@ -2,9 +2,7 @@
 const User = require('./User');
 const Home = require('./Home');
 const Decor = require('./Decor');
-const DesignTag = require('./DesignTag');
-
-module.exports = { User, Home, Decor };
+// const HomeTag = require('./HomeTag');
 
 // homes belong to users
 Home.belongsTo(User, {
@@ -42,11 +40,11 @@ Home.hasMany(Decor, {
 
 
 // THROUGH DesignTag to join the tables where needed
-Decor.belongsToMany(User, { through: DesignTag, foreignKey: "decor_id" });
-User.belongsToMany(Decor, { through: DesignTag, foreignKey: "user_id" });
+// Decor.belongsToMany(User, { through: DesignTag, foreignKey: "decor_id" });
+// User.belongsToMany(Decor, { through: DesignTag, foreignKey: "user_id" });
 
-Decor.belongsToMany(Home, { through: DesignTag, foreignKey: "decor_id" });
-Home.belongsToMany(Decor, { through: DesignTag, foreignKey: "home_id" });
+// Home.belongsToMany(Decor, { through: HomeTag, foreignKey: "home_id" });
+// Decor.belongsToMany(Home, { through: HomeTag, foreignKey: "decor_id" });
 
 
-module.exports = { User, Home, Decor, DesignTag };
+module.exports = { User, Home, Decor };
