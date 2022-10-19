@@ -1,17 +1,18 @@
 <div class="row d-flex justify-content-center">
     <div class="addhome-card" style="width: 30rem;">
-        <h3 class="page-title">Add a home</h3>
+        <h3 class="page-title">Update Home</h3>
         <p></p>
         <form class="form updatehome-form">
 
             <div class="form-group">
                 <label for="home-title">First, a short description of the home:</label>
-                <input class="form-input" type="text" id="home-title" />
+                
+                <textarea class="form-input" type="text" id="home-title">{{homes.title}}</textarea>
             </div>
 
             <div class="form-group">
                 <label for="home-address">Address of the home:</label>
-                <input class="form-input" type="text" id="home-address" />
+                 <textarea class="form-input" type="text" id="home-address">{{homes.address}}</textarea>
             </div>
 
             <div class="form-group">
@@ -37,10 +38,10 @@
 
             <div class="form-group">
                 <label for="home-link">Link to home:</label>
-                <input class="form-input" type="text" id="home-link" />
+                 <textarea class="form-input" type="text" id="home-link">{{homes.link}}</textarea>
             </div>
             {{!-- make sure to tag the user id to this via the post route --}}
-            <button class="btn btn-primary subscribe-btn mt-3" type="submit">Add Home</button>
+            <button class="btn btn-primary update-btn mt-3" type="submit">Update Home</button>
     </div>
     </form>
 
