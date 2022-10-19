@@ -65,10 +65,10 @@ router.post('/', async (req, res) => {
             // send mail with defined transport object
             let info = await transporter.sendMail({
                 from: '"Fred Foo 👻" <foo@example.com>', // sender address
-                to: "bar@example.com, `{subscribers}`", // list of receivers -- use a template literal?
+                to: `"bar@example.com, ${subscribers}"`, // list of receivers -- use a template literal?
                 subject: "Home Party Post!", // Subject line
                 text: "Someone you follow on Home Party Just added a new home!", // plain text body
-                html: "<b> Someone you follow on Home Party Just added a new home! <a href='https://pacific-lake-30103.herokuapp.com/'>Click here to see!</a></b>", // html body
+                html: `"<b> ${req.session.user_name}, who you follow on Home Party Just added a new home! <a href='https://pacific-lake-30103.herokuapp.com/'>Click here to see!</a></b>"`, // html body
             });
 
         }
