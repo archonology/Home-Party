@@ -42,7 +42,8 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/dashboard/updatehome', async (req, res) => {
+router.put('/', async (req, res) => {
+    console.log(req.body);
     try {
         const dbHomeData = await Home.update({
 
@@ -58,7 +59,8 @@ router.put('/dashboard/updatehome', async (req, res) => {
         },
             {
                 where: {
-                    user_id: req.params.user_id,
+                    user_id: req.session.user_id,
+
 
                 },
             }
