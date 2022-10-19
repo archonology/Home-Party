@@ -1,10 +1,10 @@
 <div class="card-body p-3 targetHome">
   <h5 class="card-title">{{homes.address}}</h5>
-  <h6 class="card-subtitle mb-2 text-dark">Added on {{homes.date_saved}}</h6>
+  <h6 class="card-subtitle mb-2 text-dark">Added on {{homes.date_saved}} || <strong>${{homes.price}}</strong></h6>
   <p class="card-text">{{homes.title}} -- {{homes.user.username}}</p>
-  <p>bedrooms:{{homes.bedrooms}}</p>
-    <p>bathrooms:{{homes.bathrooms}}</p>
-    <p>squarefeet:{{homes.square_feet}}</p>
+    <p><strong>bedrooms:</strong> {{homes.bedrooms}}</p>
+    <p><strong>bathrooms:</strong> {{homes.bathrooms}}</p>
+    <p><strong>squarefeet:</strong> {{homes.square_feet}}</p>
   <a href="{{homes.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
 </div>
 <br>
@@ -16,6 +16,6 @@
     <h5 class="card-title">{{decor.product_name}}</h5>
     <h6 class="card-subtitle mb-2 text-dark">Added on
       {{decor.date_saved}} || <strong>${{decor.price}}</strong> </h6>
-        <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
-    </div>
-    {{/each}}
+    <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
+  </div>
+  {{/each}}
