@@ -1,13 +1,12 @@
-const deleteHomeFormHandler = async (event) => {
+const deleteHome = async (event) => {
   event.preventDefault();
-  const confirmDelete = document.querySelector('input[name="confirmDelete"]').value;
   const home_id = document.querySelector("#home-id").value;
-  console.log(confirmDelete);
-  console.log(home_id);
-  if (confirmDelete === "Yes" && home_id) {
-    const response = await fetch('api/homes', {
+
+  console.log("The Home id for deleting is " + home_id);
+  if (home_id) {
+    const response = await fetch('/api/homes', {
       method: 'DELETE',
-      body: JSON.stringify({ confirmDelete, home_id }),
+      body: JSON.stringify({ home_id }),
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
@@ -18,6 +17,5 @@ const deleteHomeFormHandler = async (event) => {
     }
   }
 };
-document
-  .querySelector('.delete-form')
-  .addEventListener('submit', deleteHomeFormHandler);
+
+document.getElementById("home-id").addEventListener("click", deleteHome);

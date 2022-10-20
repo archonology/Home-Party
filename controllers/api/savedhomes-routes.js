@@ -78,7 +78,7 @@ router.delete("/", async (req, res) => {
     try {
       const dbHomeData = await Home.destroy({
         where: {
-          id: Number(req.body.home_id),
+          id: req.body.home_id,
         },
       });
       res.status(200).json(dbHomeData);

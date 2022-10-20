@@ -1,13 +1,13 @@
 :root {
   --jetblack: #000000;
   --pitstop: #313232;
-  --ultraman: #cd2323;
+  --ultraman: #e93636;
   --mikey: rgb(255, 140, 0);
   --unicorn: #f8f6fa;
   --donnie: #804594;
   --alonzo: #159696;
   --sonic: #0d338a;
-  --sonic2: #336ffb;
+  --sonic2: #3b61b9;
   --party: rgb(215, 192, 15);
   --partymore: rgb(252, 225, 18);
   --berrykix: #581373;
@@ -62,7 +62,7 @@ main {
 }
 
 .logout {
-  background-color: var(--donnie);
+  background-color: var(--sonic2);
   color: var(--unicorn);
   margin-right: 2em;
 }
@@ -129,22 +129,22 @@ p {
 
 #homes-tab {
   font-family: 'Gochi Hand', cursive;
-  background-color: var(--jetblack);
+  background-color: var(--sonic2);
   color: var(--unicorn);
   font-size: 30px;
   border: none;
-  width: 10.5em;
-  padding: .5em;
+  width: 5em;
+  padding: 7px;
 }
 
 #decor-tab {
   font-family: 'Gochi Hand', cursive;
-  background-color: var(--unicorn);
-  color: var(--jetblack);
+  background-color: var(--sonic);
+  color: var(--unicorn);
   font-size: 30px;
   border: none;
-  width: 10.5em;
-  padding: .5em;
+  width: 5em;
+  padding: 7px;
 }
 
 .dropdown {
@@ -152,7 +152,7 @@ p {
 }
 
 #addhome-link {
-  background-color: var(--cake);
+  background-color: var(--ultraman);
   color: var(--unicorn);
 }
 
@@ -194,7 +194,7 @@ p {
 
 #homes-tab:hover {
   text-decoration: none;
-  background-color: #313232;
+  background-color: var(--flash);
 }
 
 #decor-tab:hover {
@@ -203,7 +203,7 @@ p {
 }
 
 #addhome-link:hover {
-  background-color: gray;
+  background-color: var(--flash);
 }
 
 #moredecor-link:hover {
