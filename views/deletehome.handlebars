@@ -1,22 +1,7 @@
 <div>
-    <form class="p-4 delete-form">
-        <div class="mb-3">
-            <label for="confirmDelete" class="form-label d-flex justify-content-start">Are you sure you want to delete
-                this home forever?</label>
-            <input type="radio" id="yes" name="confirmDelete" value="Yes" />
-            <label for="yes">Yes</label><br />
-            <input type="radio" id="no" name="confirmDelete" value="No" />
-            <label for="no">No</label><br />
-             {{!-- hidden blog id to pass to route --}}
-            <div class="form-group" hidden>
-                <label for="home-id">Home Id:</label>
-                <input class="form-input" type="number" id="home-id" value="{{homes.id}}" />
-            </div>
-            <br />
-            <br />
-            <button type="submit" class="btn btn-primary d-flex justify-content-end btn-outline-success delete"
-                id="post-delete">Delete Post</button>
-        </div>
-    </form>
+    <h4>Are you sure you want to delete this home?</h4>
+    <button class="btn card-link" id="home-id" value="{{homes.id}}">Yes</button>
+    <br>
+    <a href="/dashboard"><button class="btn card-link">No</button></a>
 </div>
 <script src="/js/delete.js"></script>
