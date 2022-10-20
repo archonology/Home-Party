@@ -3,7 +3,7 @@
 ## Links
 [link to Heroku deployment](https://pacific-lake-30103.herokuapp.com)
 ## Screenshot
-![Screenshot of homepage](./public/images/Screen%20Shot%202022-10-18%20at%207.57.53%20PM.png)    
+![Screenshot of homepage](./public/images/Screen%20Shot%202022-10-19%20at%2011.17.36%20PM.png)    
 ## Table of Contents:
 #### [Description](#description)
 #### [Installation](#installation)
