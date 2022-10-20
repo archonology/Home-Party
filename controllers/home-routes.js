@@ -173,6 +173,19 @@ router.get ('/dashboard/updatedecor/:id', async (req, res) => {
     }
 });
 
+router.get ('/dashboard/deletehome/:id', async (req, res) => {
+    try {
+        const dbhomeData = await Home.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Decor }],
+          });
+    
+        const homes = dbhomeData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('deletehome', { homes, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 
 
