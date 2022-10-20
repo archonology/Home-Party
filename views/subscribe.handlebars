@@ -1,27 +1,33 @@
 <div class="row d-flex justify-content-center">
     <div class="subscribe-card" style="width: 30rem;">
         <h3 class="page-title">Subscribe</h3>
-        <p>By subscribing below, you agree to get email notifications from the user of of your choice. You will be sent an email notification each time that user adds a new home or home item they are tracking on this site.</p>
+        <p>By subscribing below, you agree to get email notifications from the user of of your choice. You will be sent
+            an email notification each time that user adds a new home or home item they are tracking on this site.</p>
         <form class="form subscribe-form">
             <div class="form-group">
                 {{!-- this form needs attention -- think for each of users--}}
+                <label for="subscriber">Your Name:</label>
+                <input class="form-input" type="text" id="subscriber" />
+            </div>
+
+            <div class="form-group">
                 <label for="email-subscribe">Your email:</label>
                 <input class="form-input" type="text" id="email-subscribe" />
             </div>
-            <div class="form-group">
 
+            <div class="form-group">
                 <label for="users" class="mt-3">Choose a user:</label>
                 <select id="users" class="user-box ml-1 p-2" name="users">
                     {{#each users as |user|}}
                     <option value="{{user.id}}">{{user.username}}</option>
                     {{/each}}
                 </select>
-
             </div>
 
             <button class="btn btn-primary subscribe-btn mt-3" type="submit">Subscribe</button>
+        </form>
     </div>
-    </form>
+
 
 
     <script src="/js/subscribe.js"></script>
