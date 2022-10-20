@@ -72,6 +72,19 @@ router.put('/', async (req, res) => {
     }
 });
 
-
+router.delete("/", async (req, res) => {
+    console.log(req.body);
+    console.log(req.session);
+    try {
+      const dbHomeData = await Home.destroy({
+        where: {
+          id: Number(req.body.home_id),
+        },
+      });
+      res.status(200).json(dbHomeData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });  
 
 module.exports = router;
