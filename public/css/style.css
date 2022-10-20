@@ -1,7 +1,7 @@
 :root {
   --jetblack: #000000;
   --pitstop: #313232;
-  --ultraman: #cd2323;
+  --ultraman: #e93636;
   --mikey: rgb(255, 140, 0);
   --unicorn: #f8f6fa;
   --donnie: #804594;
@@ -152,7 +152,7 @@ p {
 }
 
 #addhome-link {
-  background-color: var(--cake);
+  background-color: var(--ultraman);
   color: var(--unicorn);
 }
 
@@ -203,7 +203,7 @@ p {
 }
 
 #addhome-link:hover {
-  background-color: gray;
+  background-color: var(--flash);
 }
 
 #moredecor-link:hover {
