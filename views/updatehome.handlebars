@@ -17,23 +17,23 @@
 
             <div class="form-group">
                 <label for="home-price">Cost of the home:</label>
-                <input class="form-input" {{!-- needs error handingly to deal with decimals --}} type="number" id="home-price" />
+                <input class="form-input" {{!-- needs error handingly to deal with decimals --}} type="number" id="home-price" placeholder="{{homes.price}}" />
             </div>
 
             <div class="form-group">
                 <label for="home-bedrooms">Number of bedrooms:</label>
-                <input class="form-input" type="number" id="home-bedrooms" />
+                <input class="form-input" type="number" id="home-bedrooms" placeholder="{{homes.bedrooms}}"  />
             </div>
 
             <div class="form-group">
                 <label for="home-bathrooms">Number of bathrooms:</label>
-                <input class="form-input" type="number" id="home-bathrooms" />
+                <input class="form-input" type="number" id="home-bathrooms" placeholder="{{homes.bathrooms}}"  />
             </div>
 
             <div class="form-group">
                 <label for="home-size">Square Feet:</label>
                 <input class="form-input" {{!-- needs error handingly to deal with decimals --}} type="number"
-                    id="home-size" />
+                    id="home-size" placeholder="{{homes.square_feet}}" />
             </div>
 
             <div class="form-group">

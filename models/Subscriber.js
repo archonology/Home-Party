@@ -13,7 +13,7 @@ Subscriber.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        subscriber: {
             type: DataTypes.STRING,
             allowNull: false,
         },

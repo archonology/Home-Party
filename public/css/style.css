@@ -79,7 +79,7 @@ p {
 }
 
 .home-card {
-  background-color: var(--mikey);
+  background-color: var(--alonzo);
   border-radius: 8px;
 }
 
@@ -102,13 +102,6 @@ p {
   font-weight: bold;
 }
 
-.home-data {
-  /* background-color: var(--sonic2);
-  padding: 5px;
-  margin: 5px;
-  border-radius: 8px; */
-}
-
 .decor-card .card-text {
   color: var(--cake);
   font-weight: bold;
@@ -122,7 +115,7 @@ p {
 }
 
 .targetHome {
-  background-color: var(--mikey);
+  background-color: var(--alonzo);
   border-radius: 8px;
 }
 
@@ -136,7 +129,7 @@ p {
 
 #homes-tab {
   font-family: 'Gochi Hand', cursive;
-  background-color: var(--sonic);
+  background-color: var(--jetblack);
   color: var(--unicorn);
   font-size: 30px;
   border: none;
@@ -146,8 +139,8 @@ p {
 
 #decor-tab {
   font-family: 'Gochi Hand', cursive;
-  background-color: var(--flash);
-  color: var(--unicorn);
+  background-color: var(--unicorn);
+  color: var(--jetblack);
   font-size: 30px;
   border: none;
   width: 10.5em;
@@ -159,7 +152,7 @@ p {
 }
 
 #addhome-link {
-  background-color: var(--ultraman);
+  background-color: var(--cake);
   color: var(--unicorn);
 }
 
@@ -194,31 +187,23 @@ p {
   background-color: var(--sonic);
 }
 
-.home-card:hover {
-  background-color: var(--sonic2)
-}
-
-.decor-card:hover {
-  background-color: var(--flash);
-}
-
 .card-link:hover {
-  background-color: var(--ultraman);
-  color: var(--unicorn);
+  background-color: var(--cake);
+  color: var(--jetblack);
 }
 
 #homes-tab:hover {
   text-decoration: none;
-  background-color: #15fa43;
+  background-color: #313232;
 }
 
 #decor-tab:hover {
   text-decoration: none;
-  background-color: #8b098e;
+  background-color: var(--donnie);
 }
 
 #addhome-link:hover {
-  background-color: var(--berrykix);
+  background-color: gray;
 }
 
 #moredecor-link:hover {

@@ -3,9 +3,10 @@
 ## Links
 [link to Heroku deployment](https://pacific-lake-30103.herokuapp.com)
 ## Screenshot
-![Screenshot of homepage](./public/images/Screen%20Shot%202022-10-18%20at%207.57.53%20PM.png)    
+![Screenshot of homepage](./public/images/Screen%20Shot%202022-10-19%20at%2011.17.36%20PM.png)    
 ## Table of Contents:
 #### [Description](#description)
+#### [Technologies](#technologies)
 #### [Installation](#installation)
 #### [Usage Info](#usage-info)
 #### [Contribution Guidelines](#contribution-guidelines)
@@ -15,6 +16,11 @@
 
 ## Description
 A full-stack website built collaboratively. Home Party is a place to invite your family and friends for tracking your favorite homes and all the things you would like to have in it.
+
+## Technologies
+The languages we used were Javascript, CSS, and HTML5. The dependencies we used were Express, Handlebars, Bcrypt, MySQL2, Sequelize, and Node Mailer. 
+
+Node Mailer was a new one for us, so we spent time learning from the docs and integrating it into our application.  We wanted the ability to send subscribers notifications when a user of their choice made a new post on the site.
     
 ## Installation
 View the deployed site (link above) to view the site without install.  To run it locally, clone the repo and do an `npm install` in the root file of the project.  You can use the test data in the seed file by running `npm run seed`, or skip to `npm start` and add your own data through the front end. The project runs out of the local port `3001`.  
