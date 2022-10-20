@@ -1,0 +1,42 @@
+[
+  {
+    "subscriber": "Diane",
+    "email": "diane@gmail.com",
+    "user_id": "1"
+  },
+  {
+    "subscriber": "Mohamed",
+    "email": "mohamed@gmail.com",
+    "user_id": "2"
+  },
+  {
+    "subscriber": "Reed",
+    "email": "reed@aol.com",
+    "user_id": "3"
+  },
+  {
+    "subscriber": "AJ",
+    "email": "AJ99@msn.com",
+    "user_id": "4"
+  },
+  {
+    "subscriber": "Dave",
+    "email": "dave@gmail.com",
+    "user_id": "1"
+  },
+  {
+    "subscriber": "Alice",
+    "email": "alice@gmail.com",
+    "user_id": "2"
+  },
+  {
+    "subscriber": "Maya",
+    "email": "maya@aol.com",
+    "user_id": "3"
+  },
+  {
+    "subscriber": "Gayle",
+    "email": "gayle@msn.com",
+    "user_id": "4"
+  }
+]

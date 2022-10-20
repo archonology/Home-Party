@@ -1,7 +1,20 @@
 const router = require('express').Router();
-const { Home, User, Decor, Subscriber } = require('../../models');
+const { Subscriber, User } = require('../../models');
 
 module.exports = router;
+
+// GET all subscriber info (api/subscribers)
+router.get('/', async (req, res) => {
+    try {
+        const dbSubscriberData = await Subscriber.findAll({
+            include: [{ model: User }]
+        });
+  
+        res.status(200).json(dbSubscriberData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  });
 
 router.post('/', async (req, res) => {
     // for testing route

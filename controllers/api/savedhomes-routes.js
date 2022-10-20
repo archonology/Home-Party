@@ -2,9 +2,6 @@ const router = require('express').Router();
 const { Home, User, Decor } = require('../../models');
 const sendMail = require("../../utils/sendMail");
 
-
-
-
 // GET all saved homes (api/homes)
 router.get('/', async (req, res) => {
     try {
@@ -19,11 +16,8 @@ router.get('/', async (req, res) => {
 });
 
 
-
 router.post('/', sendMail, async (req, res,) => {
-    // for testing route
-    console.log(req.body);
-    console.log(req.session);
+
     try {
         const dbHomeData = await Home.create({
 
@@ -47,7 +41,7 @@ router.post('/', sendMail, async (req, res,) => {
 });
 
 router.put('/', async (req, res) => {
-    console.log(req.body);
+
     try {
         const dbHomeData = await Home.update({
 
