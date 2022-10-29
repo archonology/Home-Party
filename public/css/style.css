@@ -1,55 +1,54 @@
 :root {
   --jetblack: #000000;
-  --pitstop: #313232;
-  --ultraman: #e93636;
-  --mikey: rgb(255, 140, 0);
+  --wornblack: #343333;
   --unicorn: #f8f6fa;
-  --donnie: #804594;
-  --alonzo: #159696;
   --sonic: #0d338a;
   --sonic2: #3b61b9;
-  --party: rgb(215, 192, 15);
-  --partymore: rgb(252, 225, 18);
-  --berrykix: #581373;
-  --flash: #fb308f;
+  --party: rgb(44, 48, 76);
+  --flash: #fc6094;
   --cake: #e99dc1;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Cutive Mono', monospace;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
+  background-image: url(https://wallpapercave.com/wp/wp9827535.jpg);
+  background-size: 150%;
   background-color: var(--party);
-  color: var(--pitstop);
+  color: var(--unicorn);
 }
 body p {
-  color: var(--pitstop);
+  color: var(--unicorn);
+  font-size: x-large;
+}
+a:hover {
+  text-decoration: none;
 }
 
 .navbar {
-  background-color: var(--alonzo);
+  background-color: var(--jetblack);
 }
 
 header h1 {
-  font-family: "Luckiest Guy", cursive;
   font-size: 72px;
-  color: var(--partymore);
-  text-shadow: 6px 4px var(--berrykix);
+  color: var(--flash);
+  font-family: 'Archivo Black', sans-serif;
   padding: 1em;
 }
 
 .nav-link {
   color: var(--unicorn);
-  font-family: 'Gochi Hand', cursive;
-  font-size: 30px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 20px;
 }
 
 main {
-  margin: 3em;
-  padding: 3em;
+  margin: 2em;
+  padding: 2em;
 }
 
 .jumbotron h1 {
@@ -70,7 +69,7 @@ main {
 h2 {
   text-align: center;
   font-family: 'Gochi Hand', cursive;
-  color: var(--pitstop);
+  color: var(--unicorn);
   font-size: 40px;
 }
 p {
@@ -79,26 +78,28 @@ p {
 }
 
 .home-card {
-  background-color: var(--alonzo);
+  background-color: var(--wornblack);
   border-radius: 8px;
 }
 
 .decor-card {
-  background-color: var(--donnie);
+  background-color: var(--jetblack);
   border-radius: 8px;
 }
 
 .card-title {
-  font-family: 'Gochi Hand', cursive;
+  font-family: 'Archivo Black', sans-serif;
   color: var(--unicorn);
-  font-size: 30px;
+  font-size: 25px;
 }
 .card-subtitle {
-  line-height: 2;
+  line-height: 1.5;
+  color: var(--unicorn);
+  font-size: x-large;
 }
 
 .card-text {
-  color: var(--pitstop);
+  color: var(--cake);
   font-weight: bold;
 }
 
@@ -108,15 +109,19 @@ p {
 }
 
 .card-link {
-  color: var(--jetblack);
-  background-color: var(--partymore);
+  color: var(--unicorn);
+  background-color: var(--sonic2);
   margin: 5px;
   font-weight: bold;
 }
 
 .targetHome {
-  background-color: var(--alonzo);
+  background-color: var(--wornblack);
   border-radius: 8px;
+}
+
+.high-info {
+  color: var(--flash);
 }
 
 .user-box {
@@ -128,22 +133,24 @@ p {
 }
 
 #homes-tab {
-  font-family: 'Gochi Hand', cursive;
-  background-color: var(--sonic2);
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  background-color: var(--wornblack);
   color: var(--unicorn);
-  font-size: 30px;
+  font-size: 20px;
   border: none;
-  width: 5em;
+  width: 10em;
   padding: 7px;
 }
 
 #decor-tab {
-  font-family: 'Gochi Hand', cursive;
-  background-color: var(--sonic);
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  background-color: var(--jetblack);
   color: var(--unicorn);
-  font-size: 30px;
+  font-size: 20px;
   border: none;
-  width: 5em;
+  width: 10em;
   padding: 7px;
 }
 
@@ -152,8 +159,8 @@ p {
 }
 
 #addhome-link {
-  background-color: var(--ultraman);
-  color: var(--unicorn);
+  background-color: var(--jetblack);
+  color: var(--flash);
 }
 
 #moredecor-link {
@@ -171,53 +178,42 @@ p {
   font-size: 40px;
 }
 
-.update {
-  background-color: #deac08;
-}
-
-.delete {
-  background-color: #c64a41;
-}
-
 .login:hover {
-  background-color: var(--donnie);
+  background-color: var(--flash);
+  color: var(--jetblack);
 }
 
 .logout:hover {
   background-color: var(--sonic);
 }
 
+.card-title:hover {
+  color: var(--flash);
+}
+
+.nav-link:hover {
+  color: var(--flash);
+}
+
 .card-link:hover {
-  background-color: var(--cake);
+  background-color: var(--flash);
   color: var(--jetblack);
 }
 
 #homes-tab:hover {
   text-decoration: none;
-  background-color: var(--flash);
+  background-color: var(--cake);
 }
 
 #decor-tab:hover {
   text-decoration: none;
-  background-color: var(--donnie);
+  background-color: var(--flash);
 }
 
 #addhome-link:hover {
-  background-color: var(--flash);
+  background-color: var(--wornblack);
 }
 
 #moredecor-link:hover {
   background-color: #432c64;
-}
-
-.new-post button:hover {
-  background-color: #53a268;
-}
-
-.update:hover {
-  background-color: #d2a308;
-}
-
-.delete:hover {
-  background-color: #762a24;
 }
