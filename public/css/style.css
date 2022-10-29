@@ -217,3 +217,38 @@ p {
 #moredecor-link:hover {
   background-color: #432c64;
 }
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-image: url(https://wallpapercave.com/wp/wp9827535.jpg);
+    background-size: 500%;
+    background-color: var(--party);
+    color: var(--unicorn);
+  }
+  .navbar {
+    background-color: var(--sonic2);
+  }
+  header h1 {
+    font-size: 48px;
+    padding: 5px;
+  }
+  .navbar-toggler {
+    margin: 2em;
+  }
+  .nav-link {
+    color: var(--unicorn);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+    margin-right: 2em;
+    text-align: right;
+  }
+  .login {
+    float: right;
+    margin-right: 2em;
+  }
+  
+  .logout {
+    float: right;
+    margin-right: 2em;
+  }
+}

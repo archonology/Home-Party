@@ -5,22 +5,26 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Cutive+Mono&family=Fjalla+One&family=Gloria+Hallelujah&family=Gochi+Hand&family=Luckiest+Guy&family=Nabla&family=Noto+Emoji:wght@300;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Cutive+Mono&family=Fjalla+One&family=Gloria+Hallelujah&family=Gochi+Hand&family=Luckiest+Guy&family=Nabla&family=Noto+Emoji:wght@300;400;700&family=Space+Mono&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    {{!-- <script src="https://cdn.tailwindcss.com"></script> --}}
+  {{!--
+  <script src="https://cdn.tailwindcss.com"></script> --}}
   <link rel="stylesheet" type="text/css" href="/css/jass.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <title>Home Party</title>
   {{!-- <img src="../../public/images/icons8-house-48.png" alt="house icon"> --}}
 </head>
+
 <body>
 
   <header>
     <nav class="navbar navbar-expand-lg">
-     <h1>Home Party</h1>
+      <h1>Home Party</h1>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,22 +37,22 @@
           <li class="nav-item">
             <a class="nav-link" href="/dashboard">Dashboard</a>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/subscribe">Subscribe</a>
           </li>
         </ul>
         <!-- login button needs route to handlebars html -->
-        <span class="navbar m-4">
-          {{#if loggedIn}}
-          <button id="logout" class="btn logout">Logout</button>
-          {{else}}
-          <a href="/login" class="form-inline">
-            <button class="btn login" type="button">
-              Login
-            </button></a>
-            {{/if}}
-        </span>
       </div>
+      <span class="navbar m-4">
+        {{#if loggedIn}}
+        <button id="logout" class="btn logout">Logout</button>
+        {{else}}
+        <a href="/login" class="form-inline">
+          <button class="btn login" type="button">
+            Login
+          </button></a>
+        {{/if}}
+      </span>
     </nav>
   </header>
   <main>
@@ -57,9 +61,15 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
