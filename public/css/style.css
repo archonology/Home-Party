@@ -250,5 +250,25 @@ p {
   .logout {
     float: right;
     margin-right: 2em;
+    background-color: var(--sonic);
+  }
+
+  .logout:hover {
+    color: var(--cake);
+  }
+  #homes-tab {
+    text-align: center;
+    background-color: var(--wornblack);
+    color: var(--unicorn);
+    border: none;
+    padding: 3px;
+  }
+  
+  #decor-tab {
+    text-align: center;
+    background-color: var(--jetblack);
+    color: var(--unicorn);
+    border: none;
+    padding: 3px;
   }
 }

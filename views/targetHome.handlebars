@@ -1,4 +1,7 @@
-<div class="card-body p-3 targetHome">
+
+<section class="d-flex flex-wrap justify-content-center">
+  <div class="home-card p-1 ml-3 mb-5">
+    <div class="card-body p-3">
   <h5 class="card-title">{{homes.address}}</h5>
   <h6 class="card-subtitle mb-2">Added on {{homes.date_saved}} || <strong>${{homes.price}}</strong></h6>
   <p class="card-text">{{homes.title}} -- {{homes.user.username}}</p>
@@ -7,11 +10,15 @@
     <p class="high-info"><strong>squarefeet:</strong> {{homes.square_feet}}</p>
   <a href="{{homes.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
 </div>
+</section>
 <br>
 <h2>Decor for this home:</h2>
 <br>
+<section class="d-flex flex-wrap justify-content-center">
+  <div class="decor-card p-1 ml-3 mb-5">
+    <div class="card-body p-3">
 {{#each homes.decors as |decor|}}
-<div class="decor-card">
+<div class="decor-card p-1 ml-3 mb-5">
   <div class="card-body p-3">
     <h5 class="card-title">{{decor.product_name}}</h5>
     <h6 class="card-subtitle mb-2">Added on
@@ -19,3 +26,4 @@
     <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
   </div>
   {{/each}}
+  </section>
