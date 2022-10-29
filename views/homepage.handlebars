@@ -15,7 +15,7 @@
   <div class="home-card p-1 ml-3 mb-5" style="width: 40rem;">
     <div class="card-body p-3">
       <a href="homes/{{home.id}}"><h5 class="card-title">{{home.address}}</h5></a>
-       <h6 class="card-subtitle mb-2 text-dark">Added on {{home.date_saved}} || <strong>${{home.price}}</strong></h6>
+       <h6 class="card-subtitle mb-2">Added on {{home.date_saved}} || <strong>${{home.price}}</strong></h6>
       <p class="card-text">{{home.title}} -- {{home.user.username}}</p>
       <a href="{{home.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
       {{!-- <img src="../public/images/icons8-house-48.png" alt="house icon"> --}}
@@ -32,7 +32,7 @@
   <div class="decor-card p-1 ml-3 mt-3" style="width: 40rem;">
     <div class="card-body p-3">
       <h5 class="card-title">{{decor.product_name}}</h5>
-      <h6 class="card-subtitle mb-2 text-dark">Added on
+      <h6 class="card-subtitle mb-2">Added on
         {{decor.date_saved}} || <strong>${{decor.price}}</strong> </h6>
       <p class="card-text">{{decor.description}} -- {{decor.user.username}}</p>
         <a href="{{decor.link}}"><button id="gotohome-link" class="btn card-link">Visit the Link</button></a>
