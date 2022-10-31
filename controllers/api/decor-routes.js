@@ -81,23 +81,16 @@ router.put("/", async (req, res) => {
 });
 
 //DELETE route for the views
-router.delete("/:id", async (req, res) => {
+router.delete("/", async (req, res) => {
   try {
-    const dbDecorData = await Decor.destroy(req.body, {
-      include: [{ model: User }, { model: Home }],
-      title: req.body.title,
-      post: req.body.post,
-      user_id: req.session.user_id,
+    const dbDecorData = await Decor.destroy({
       where: {
-        id: req.params.id,
+        id: req.body.decor_id,
       },
     });
 
-    //for testing routes
     res.status(200).json(dbDecorData);
 
-    // const decors = dbDecorData.map((decor) => decor.get({ plain: true }));
-    // res.render('dashboard', { decors, loggedIn: req.session.loggedIn, });
   } catch (err) {
     res.status(500).json(err);
   }
