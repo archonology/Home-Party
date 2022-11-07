@@ -34,6 +34,7 @@ router.post('/', async (req, res) => {
   console.log(req.session);
     try {
       const dbUserData = await User.create({
+        include: [{ model: Home }, { model: Decor }],
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,

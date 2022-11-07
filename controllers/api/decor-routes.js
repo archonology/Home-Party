@@ -33,6 +33,7 @@ router.get("/:id", async (req, res) => {
 //post route for decor
 router.post("/", async (req, res) => {
   console.log(req.body);
+  console.log(req.session);
 
   try {
     const dbDecorData = await Decor.create({
@@ -51,7 +52,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//post route for decor
+//update route for decor
 router.put("/", async (req, res) => {
   console.log(req.body);
   console.log(req.session);
