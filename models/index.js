@@ -29,7 +29,6 @@ User.hasMany(Decor, {
 // decor belongs to homes
 Decor.belongsTo(Home, {
     foreignKey: "home_id",
-    onDelete: 'CASCADE'
   });
 
 // a home has many decor
