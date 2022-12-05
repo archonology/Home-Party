@@ -80,6 +80,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 //GET the add home form
 router.get("/dashboard/addhome", async (req, res) => {
 try {
+    console.log(req.session);
     res.render('addhome', { loggedIn: req.session.loggedIn })
 } catch (err) {
     res.status(500).json(err);
@@ -103,6 +104,7 @@ router.get('/dashboard/updatehome/:id', async (req, res) => {
 
 //GET a single post
 router.get('/homes/:id', async (req, res) => {
+    console.log(req.session);
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],

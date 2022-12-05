@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
   console.log(req.session);
     try {
       const dbUserData = await User.create({
-        include: [{ model: Home }, { model: Decor }],
+        // include: [{ model: Home }, { model: Decor }],
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
@@ -47,6 +47,7 @@ router.post('/', async (req, res) => {
         req.session.user_name = dbUserData.username;
   
         res.status(200).json(dbUserData);
+        req.session.save();
         console.log(req.session);
       });
     } catch (err) {

@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', sendMail, async (req, res,) => {
-
+    console.log(req.session);
     try {
         const dbHomeData = await Home.create({
 
