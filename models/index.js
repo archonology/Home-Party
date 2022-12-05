@@ -8,12 +8,13 @@ const Subscriber = require('./Subscriber');
 // homes belong to users
 Home.belongsTo(User, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 // a user has many homes
 User.hasMany(Home, {
     foreignKey: 'user_id',
-
+    onDelete: 'CASCADE'
 });
 
 // decor belongs to users
@@ -24,6 +25,7 @@ Decor.belongsTo(User, {
 // a user has a lo† of decor
 User.hasMany(Decor, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 // decor belongs to homes
