@@ -10,7 +10,7 @@ router.get("/login", (req, res) => {
         return;
     }
 
-    res.render("login");
+    res.render("login", { loggedIn: req.session.loggedIn });
 });
 
 //GET all saved users for subscribing
@@ -79,12 +79,13 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 //GET the add home form
 router.get("/dashboard/addhome", async (req, res) => {
-    if (req.session.loggedIn) {
-        res.render("addhome");
-        return;
-    }
-    res.redirect("/");
+try {
+    res.render('addhome', { loggedIn: req.session.loggedIn })
+} catch (err) {
+    res.status(500).json(err);
+}
 });
+
 //get to updated home
 router.get('/dashboard/updatehome/:id', async (req, res) => {
     try {
