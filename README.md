@@ -1,7 +1,7 @@
 # Home Party
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Links
-[link to Heroku deployment](https://pacific-lake-30103.herokuapp.com)
+link to Heroku deployment: https://home-party-app.herokuapp.com
 ## Screenshot
 ![Screenshot of homepage](./public/images/Screen%20Shot%202022-10-29%20at%204.22.42%20PM%20(2).png)    
 ## Table of Contents:
