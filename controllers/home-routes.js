@@ -78,7 +78,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 });
 
 //GET the add home form
-router.get("/dashboard/addhome", withAuth, async (req, res) => {
+router.get("/dashboard/addhome", async (req, res) => {
     if (req.session.loggedIn) {
         res.render("addhome");
         return;
@@ -86,7 +86,7 @@ router.get("/dashboard/addhome", withAuth, async (req, res) => {
     res.redirect("/");
 });
 //get to updated home
-router.get('/dashboard/updatehome/:id', withAuth, async (req, res) => {
+router.get('/dashboard/updatehome/:id', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
@@ -116,7 +116,7 @@ router.get('/homes/:id', async (req, res) => {
 });
 
 //GET the add decor form
-router.get("/dashboard/moredecor/:id", withAuth, async (req, res) => {
+router.get("/dashboard/moredecor/:id", async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
@@ -131,7 +131,7 @@ router.get("/dashboard/moredecor/:id", withAuth, async (req, res) => {
 });
 
 // get a single post
-router.get('/dashboard/:id', withAuth, async (req, res) => {
+router.get('/dashboard/:id', async (req, res) => {
     try {
         const dbHomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
@@ -145,7 +145,7 @@ router.get('/dashboard/:id', withAuth, async (req, res) => {
 });
 
 // get a single post
-router.get('/dashboard/decor/:id', withAuth, async (req, res) => {
+router.get('/dashboard/decor/:id', async (req, res) => {
     try {
         const dbDecorData = await Decor.findByPk(req.params.id, {
             include: [{ model: User }, { model: Home }],
@@ -159,7 +159,7 @@ router.get('/dashboard/decor/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get ('/dashboard/updatedecor/:id', withAuth, async (req, res) => {
+router.get ('/dashboard/updatedecor/:id', async (req, res) => {
     try {
         const dbDecorData = await Decor.findByPk(req.params.id, {
             include: [{ model: User }, { model: Home }],
@@ -173,7 +173,7 @@ router.get ('/dashboard/updatedecor/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get ('/dashboard/deletehome/:id', withAuth, async (req, res) => {
+router.get ('/dashboard/deletehome/:id', async (req, res) => {
     try {
         const dbhomeData = await Home.findByPk(req.params.id, {
             include: [{ model: User }, { model: Decor }],
@@ -187,7 +187,7 @@ router.get ('/dashboard/deletehome/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get ('/dashboard/deletedecor/:id', withAuth, async (req, res) => {
+router.get ('/dashboard/deletedecor/:id', async (req, res) => {
     try {
         const dbDecorData = await Decor.findByPk(req.params.id, {
             include: [{ model: User }, { model: Home }],
